@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.page{
+    margin: 50px 20px;
+}
+.title
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: serif '微软雅黑';
+}
+.container
+{
+    width: 1100px;
+}
+.content
+{
+    padding: 20px;
+    box-shadow: 0px 0px 15px darkgray;
+    border-radius: 20px;
+    margin-right: 20px;
+    /* display: inline-block; */
+    float: left;
+}
+.content:last-child
+{
+    margin-right: 0;
+}
+.content-title
+{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: serif '微软雅黑';
+    
+}
+.content-desc
+{
+    margin: 20px 0 50px 0;
+}
+.img
+{
+    width: 305px;
+    height: 305px;
+}
+.content img
+{
+    width: 100%;
+}
