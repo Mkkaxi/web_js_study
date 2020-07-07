@@ -1,0 +1,139 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.container
+{
+    background-color: cornflowerblue;
+    height: 500px;
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.bra-1
+{
+    position: absolute;
+    bottom: 65px;
+    left: 140px;
+    width: 42px;
+    height: 200px;
+    background-color: rgb(138, 91, 41);
+    box-shadow:inset 5px 0 10px  rgb(179, 167, 156);
+    transform: rotate(-3deg);
+    z-index: 10;
+}
+.bra-2
+{
+    position: absolute;
+    left: 118px;
+    top: 220px;
+    height: 85px;
+    width: 15px;
+    background-color: rgb(161, 134, 106);
+    box-shadow:inset -1px 0px 10px  rgb(184, 114, 49);
+    transform: rotate(-30deg);
+    z-index: 15;
+}
+.bra-3
+{
+    position: absolute;
+    right: 202px;
+    top: 225px;
+    width: 13px;
+    height: 90px;
+    background-color: rgb(110, 73, 33);
+    transform: rotate(20deg);
+    z-index: 5;
+}
+.leaf-1
+{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: springgreen;
+    left: 18px;
+    top: 100px;
+    box-shadow:inset 10px -2px 25px rgb(45, 202, 123);
+    z-index: 30;
+
+}
+.leaf-2
+{
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    background-color: springgreen;
+    box-shadow:inset 8px 5px 15px rgb(45, 202, 123);
+    left: 58px;
+    top: 20px;
+    z-index: 40;
+}
+.leaf-3
+{
+    position: absolute;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    background-color: springgreen;
+    box-shadow:inset -20px -5px 30px rgb(45, 202, 123);
+    left: 68px;
+    top: 40px;
+    z-index: 50;
+}
+
+.trash
+{
+    position: absolute;
+    right: 90px;
+    bottom: 55px;
+    height: 115px;
+    width: 62px;
+    background-color: rgb(218, 125, 44);
+    border-radius: 16px;
+    z-index: 50;
+}
+.trash-in
+{
+    width: 50px;
+    height: 25px;
+    left: 6px;
+    position: absolute;
+    border-radius: 10px;
+    top: 12px;
+    background-color: black;
+}
+
+.bc
+{
+    position: absolute;
+    width: 340px;
+    height: 70px;
+    background-color: rgb(93, 167, 79);
+    bottom: 70px;
+}
+.k
+{
+    
+    height: 430px;
+    width: 340px;
+    background-color: black;
+    position: absolute;
+    z-index: 100;
+    opacity: 0.1;
+}
+.foot
+{
+    position: absolute;
+    bottom: 20px;
+    width: 420px;
+    height: 50px;
+    left: -50px;
+    background-color: rgb(130, 184, 119);
+    border-radius: 20px;
+    z-index: 60;
+}
