@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Good Parts(Javascript语言精粹)</h1>
+    <script>
+        // js 是弱类型语言，类型是可以变化的，由值决定
+        let func 
+        console.log(typeof func)
+        func = function()
+        {
+            console.log(arguments)
+        }
+        console.log(typeof func)
+        func(1,2,3)
+    </script>
+</body>
+</html>
