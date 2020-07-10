@@ -88,3 +88,23 @@ z-index
 {
     background: linear-gradient(-170deg, #2376ae 0%, #c16ecf 100%);
 }
+
+使元素不可见
+{
+    1. display:none (不占据空间)
+    2. visibility: hidden (占据空间)
+    3.opacity:0 (占据空间)
+}
+
+js实现动画效果
+{
+    
+    1. setInterval(function() {},时间) 每隔ms执行一次
+
+        清除计时器:clearInterval()
+        //setTimeout(function() {},时间) 执行一次
+    2. requestAnimationFrame(function() {}) (默认执行间隔为16ms)
+
+    **一般采用requestAnimationFrame进行动画效果的实现，系统执行setInterval方法有3ms左右延迟
+
+}

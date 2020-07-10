@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *
-        {
+        * {
             margin: 0;
             padding: 0;
         }
-        html,body
-        {
+
+        html,
+        body {
             font-family: sans-serif;
             background: #13091b;
             height: 100%;
         }
-        body
-        {
+
+        body {
             background: url(https://p1.music.126.net/gAmIGjlWnYXE_0O8LFp5-w==/109951164382001054.jpg) no-repeat;
             background-size: cover;
         }
-        audio
-        {
+
+        audio {
             /* display: none; */
             visibility: hidden;
         }
-        #play-btn
-        {
+
+        #play-btn {
             display: block;
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             background-color: aqua;
             height: 45px;
             width: 150px;
@@ -46,19 +47,22 @@
         }
     </style>
 </head>
+
 <body>
     <div id="content">
         <canvas id="canvas"></canvas>
-        <audio id="audio" crossorigin="anonymous" src="http://m8.music.126.net/21180815163607/04976f67866d4b4d11575ab418904467/ymusic/515a/5508/520b/f0cf47930abbbb0562c9ea61707c4c0b.mp3?infoId=92001" controls></audio>
+        <audio id="audio" crossorigin="anonymous"
+            src="http://m8.music.126.net/21180815163607/04976f67866d4b4d11575ab418904467/ymusic/515a/5508/520b/f0cf47930abbbb0562c9ea61707c4c0b.mp3?infoId=92001"
+            controls></audio>
         <a href="javascript:;" id="play-btn">PLAY</a>
     </div>
 
-    
+
     <script>
         var btn = document.getElementById('play-btn')
         var audio = document.getElementById('audio')
 
-        btn.onclick = function() {
+        btn.onclick = function () {
             audio.play()
             btn.style.display = 'none'
             //出现音浪
@@ -66,7 +70,7 @@
         }
 
         function onLoadAudio() {
-            var context = new(window.AudioContext || window.webkitAudioContext)//拿到audio的参数
+            var context = new (window.AudioContext || window.webkitAudioContext)//拿到audio的参数
             // console.log(context)
             var analyser = context.createAnalyser() //创建一个分析器，可以获取音频的时间和频率的数据，可视化此数据
             // console.log(analyser)
@@ -79,7 +83,7 @@
 
             var bufferLength = analyser.frequencyBinCount
             // console.log(bufferLength)
-            
+
             var dataArray = new Uint8Array(bufferLength)
             // console.log(dataArray)
 
@@ -89,8 +93,8 @@
             var canvas = document.getElementById('canvas')
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
-        
-            
+
+
             var ctx = canvas.getContext('2d')
             var WIDTH = canvas.width
             var HEIGHT = canvas.height
@@ -104,17 +108,16 @@
 
                 analyser.getByteFrequencyData(dataArray)
                 console.log(dataArray)
-                ctx.clearRect(0,0,WIDTH,HEIGHT)
+                ctx.clearRect(0, 0, WIDTH, HEIGHT)
 
-                for(var i = 0, x = 0; i < bufferLength; i++)
-                {
+                for (var i = 0, x = 0; i < bufferLength; i++) {
                     barHeight = dataArray[i]
                     var r = barHeight + 25 * (i / bufferLength)
                     var g = 250 * (i / bufferLength)
                     var b = 50
 
-                    ctx.fillStyle = 'rgb('+ r +','+ g + ','+ b +')'
-                    ctx.fillRect(x, HEIGHT - barHeight,barWidth,barHeight)
+                    ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')'
+                    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight)
                     x += barWidth + 2
 
                 }
@@ -125,4 +128,5 @@
 
     </script>
 </body>
+
 </html>

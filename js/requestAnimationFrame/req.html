@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *
-        {
+        * {
             margin: 0;
             padding: 0;
         }
-        .box, .box2
-        {
+
+        .box,
+        .box2 {
             position: absolute;
             width: 50px;
             height: 50px;
             border-radius: 50%;
             background: black;
         }
-        .box2
-        {
+
+        .box2 {
             top: 60px;
         }
     </style>
 </head>
+
 <body>
     <div class="box"></div>
     <div class="box2"></div>
@@ -36,22 +38,21 @@
         //     console.log(666)
         // },1000)
 
-        var dis = 0, timer = 0, diss = 0
-        
-        timer = setInterval(function(){
+        var dis = 0,
+            timer = 0,
+            diss = 0
+
+        timer = setInterval(function () {
             box.style.left = ++dis + 'px'
-            if(dis >= 500)
-            {
+            if (dis >= 500) {
                 clearInterval(timer)
             }
         }, 16);
 
-        function animation() 
-        {
-            requestAnimationFrame(function() {
+        function animation() {
+            requestAnimationFrame(function () {
                 box2.style.left = ++diss + 'px'
-                if(diss < 500)
-                {
+                if (diss < 500) {
                     animation()
                 }
             })
@@ -59,4 +60,5 @@
         animation()
     </script>
 </body>
+
 </html>
