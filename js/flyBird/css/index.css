@@ -1,0 +1,51 @@
+#wrapBG { /*游戏背景*/
+  height: 480px;
+  width: 343px;
+  margin: 0 auto;
+  position: relative;
+  top: 100px;
+  background: url(../img/bg.jpg); 
+  overflow: hidden;
+}
+
+#headTitle { /*开始标题*/
+  width: 236px;
+  height: 77px;
+  background: url(../img/head.jpg);
+  position: absolute;
+  left: 53px;
+  top: 100px;
+}
+
+#headBird {
+  float: right;
+  margin-top: 25px;
+}
+
+#startBtn {
+  width: 85px;
+  height: 29px;
+  margin: 0;
+  padding: 0;
+  background: url(../img/start.jpg);
+  position: absolute;
+  left: 129px;
+  top: 250px;
+}
+
+#grassLand1 {
+  width: 343px;
+  height: 14px;
+  background: url(../img/banner.jpg);
+  position: absolute;
+  top: 423px;
+}
+
+#grassLand2 {
+  width: 343px;
+  height: 14px;
+  background: url(../img/banner.jpg);
+  position: absolute;
+  top: 423px;
+  left: 343px;
+}

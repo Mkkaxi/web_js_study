@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>fly Bird</title>
+</head>
+
+<body>
+  <div id="wrapBG">
+
+    <div id="headTitle">
+      <!--开始标题-->
+      <img id="headBird" src="./img/bird0.png" alt="小鸟">
+    </div>
+
+    <button id="startBtn"></button>
+    <!--开始按钮-->
+
+    <div id="grassLand1"></div>
+    <div id="grassLand2"></div>
+
+  </div>
+
+  <script src="./js/bird.js"></script>
+  <script>
+    var jsWrapBG = document.getElementById('wrapBG')
+    var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
+    var jsHeadBird = document.getElementById('headBird') //获取小鸟
+
+    var Y = 3
+    var index = 0
+    var imgArr = ['img/bird0.png', 'img/bird1.png']
+    //利用帧动画的原理做出小鸟翅膀摆动的样子
+    var headWaveTimer = setInterval(headWave, 200) //设置标题上下摆动的定时器
+    function headWave() {
+      Y *= -1
+      jsHeadTitle.style.top = jsHeadTitle.offsetTop + Y + 'px'
+      jsHeadBird.src = imgArr[index++]
+      if (index == 2) {
+        index = 0
+      }
+    }
+ 
+    var jsGrassLand1 = document.getElementById('grassLand1')
+    var jsGrassLand2 = document.getElementById('grassLand2')
+    var landTimer = setInterval(landRun, 30) //让草地动
+    function landRun() {
+      if (jsGrassLand1.offsetLeft <= -343) {
+        jsGrassLand1.style.left = 343 + 'px'
+      }
+
+      if (jsGrassLand2.offsetLeft <= -343) {
+        jsGrassLand2.style.left = 343 + 'px'
+      }
+      jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px'
+      jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px'
+    }
+
+    var jsStartBtn = document.getElementById('startBtn')
+    jsStartBtn.onclick = function() { //为start按钮添加一个点击事件的处理程序
+      jsHeadTitle.style.display = 'none'
+      jsStartBtn.style.display = 'none'
+      clearInterval(headWaveTimer) //关闭标题摆动的定时器
+      // 插入小鸟到界面中
+      bird.showBird(jsWrapBG)
+      
+
+    }
+
+
+ 
+  </script>
+</body>
+
+</html>
