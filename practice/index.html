@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <script>
+    <!-- <script>
+
         function a(nums1, nums2) {
             var arr = []
             // alert(nums1.length)
@@ -26,6 +27,19 @@
 
         console.log(a([1,2,2,1],[2,2]))
         
+    </script> -->
+
+    <script>
+        function Fun(name,age) {
+            this.name = name
+            this.age = age
+        }
+
+        var fun = new Fun('zhang',18)
+
+        console.log(Fun.prototype)
+        console.log(fun.__proto__)
+        console.log(typeof Fun)
     </script>
 </body>
 
