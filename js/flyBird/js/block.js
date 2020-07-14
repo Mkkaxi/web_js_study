@@ -3,7 +3,7 @@ function Block() {
   this.downDivWrap = null,
   this.downHeight = baseObj.randomNum(0, 150),
   this.gapHeight = baseObj.randomNum(150, 160)
-  this.upHeight = 362 - this.downHeight - this.gapHeight
+  this.upHeight = 363 - this.downHeight - this.gapHeight
 
   //用生成div的方法来放管道
   this.createDiv = function(url, height, positionType, left, top) {
@@ -39,6 +39,7 @@ function Block() {
 
     function blockmove() {
       console.log(1)
+      
 
     }
 
