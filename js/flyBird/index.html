@@ -25,6 +25,8 @@
   </div>
 
   <script src="./js/bird.js"></script>
+  <script src="./js/baseObj.js"></script>
+  <script src="./js/block.js"></script>
   <script>
     var jsWrapBG = document.getElementById('wrapBG')
     var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
@@ -64,8 +66,20 @@
       jsHeadTitle.style.display = 'none'
       jsStartBtn.style.display = 'none'
       clearInterval(headWaveTimer) //关闭标题摆动的定时器
-      // 插入小鸟到界面中
-      bird.showBird(jsWrapBG)
+      
+      bird.showBird(jsWrapBG)  // 插入小鸟到界面中
+      
+      bird.flyBird()  // 小鸟下落
+
+      jsWrapBG.onclick = function () { //点击屏幕响应
+        bird.fallSpeed = -8
+      }
+
+      bird.wingWave() 
+
+      var b = new Block()  //创建障碍物
+      b.createBlock()
+
       
 
     }
