@@ -29,6 +29,7 @@
   <script src="./js/block.js"></script>
   <script>
     var jsWrapBG = document.getElementById('wrapBG')
+
     var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
     var jsHeadBird = document.getElementById('headBird') //获取小鸟
     var blockArr = [] //装管道
@@ -84,7 +85,14 @@
         blockArr.push(newBlock)
         console.log(blockDistance);
         }
-        if (blockArr[0].downDivWrap.offsetLeft < -60) {
+        if (blockArr[0].downDivWrap.offsetLeft < -80) {
+          // jsWrapBG.removeChild(blockArr[0].upDivWrap)
+          // jsWrapBG.removeChild(blockArr[0].downDivWrap)
+          delete blockArr[0].upDivWrap
+          delete blockArr[0].downDivWrap
+          // blockArr[0].downDivWrap.remove()
+          // blockArr[0].upDivWrap.remove()
+          blockArr.shift()
           
         }
         
@@ -112,6 +120,7 @@
 
       blockArr.push(b)
 
+      console.log(typeof jsWrapBG);
       
     }
 
