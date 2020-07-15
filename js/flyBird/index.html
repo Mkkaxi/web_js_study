@@ -31,6 +31,7 @@
     var jsWrapBG = document.getElementById('wrapBG')
     var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
     var jsHeadBird = document.getElementById('headBird') //获取小鸟
+    var blockArr = [] //装管道
 
     var Y = 3
     var index = 0
@@ -59,6 +60,35 @@
       }
       jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px'
       jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px'
+
+      //管道移动
+      if (blockArr.length) {
+        for (var i = 0; i < blockArr.length; i++) {
+          blockArr[i].moveBlock()
+
+          var x = baseObj.rectangleCrashExamine(blockArr[i].downDivWrap, bird.div)
+          var y = baseObj.rectangleCrashExamine(blockArr[i].upDivWrap, bird.div)
+          var z = bird.div.offsetTop >= 390
+          if(x || y || z) {
+            clearInterval(landTimer)
+            jsWrapBG.onclick = null
+            bird.fallSpeed = 0
+          }
+          
+        }
+
+        var blockDistance = baseObj.randomNum(120,350) //管道之间的间隔
+        if (blockArr[blockArr.length - 1].downDivWrap.offsetLeft < (450 - blockDistance)) {
+        var newBlock = new Block()
+        newBlock.createBlock()
+        blockArr.push(newBlock)
+        console.log(blockDistance);
+        }
+        if (blockArr[0].downDivWrap.offsetLeft < -60) {
+          
+        }
+        
+      }
     }
 
     var jsStartBtn = document.getElementById('startBtn')
@@ -80,8 +110,9 @@
       var b = new Block()  //创建障碍物
       b.createBlock()
 
-      
+      blockArr.push(b)
 
+      
     }
 
 

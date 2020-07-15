@@ -25,7 +25,6 @@ var bird = {
         bird.fallSpeed = 0
         clearTimeout(bird.flyTimer)
         clearTimeout(bird.wingTimer)
-        clearTimeout(landTimer)
       }
 
       if(bird.fallSpeed >= 12) { //控制小鸟的最大下落速度为12
