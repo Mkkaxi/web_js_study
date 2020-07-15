@@ -1,0 +1,226 @@
+html {
+  font-size: 100px;
+}
+html,
+body {
+  margin: 0;
+}
+body {
+  background: #f6f6f6;
+}
+* {
+  -webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+div,
+p,
+span,
+a {
+  margin: 0;
+  padding: 0;
+}
+a,
+input {
+  outline: 0;
+}
+a {
+  color: #42bd56;
+  text-decoration: none;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  color: #191919;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: relative;
+}
+h1 {
+  margin: 30px 0 5px;
+  line-height: 32px;
+  word-break: break-all;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+.TalionNav {
+  width: 100%;
+  position: relative;
+  z-index: 9999;
+  background: #fff;
+}
+.TalionNav-primary,
+.TalionNav-primary .search-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+.TalionNav-primary {
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 15px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.TalionNav .logo {
+  display: inline-block;
+  font-size: 0;
+  height: 26px;
+  width: 54px;
+  flex: 54px 0 0;
+  background: url("./img/1.png") 50% no-repeat;
+  background-size: contain;
+}
+.TalionNav .logo {
+  margin-right: 15px;
+}
+.TalionNav .logo h1 {
+  opacity: 0;
+}
+.TalionNav a {
+  text-decoration: none;
+}
+.TalionNav-primary,
+.TalionNav-primary .search-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+.TalionNav-primary .search-box {
+  width: 100px;
+  flex: 100px 0 0;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #dfdfdf;
+  color: rgba(0,0,0,0.25);
+  background-color: #f7f7f7;
+  font-size: 15px;
+  line-height: 21px;
+  padding-left: 8px;
+}
+.TalionNav-primary .search-box input[type=search] {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0;
+  padding-left: 20px;
+  background: url("./img/2.png") no-repeat 0;
+  background-size: 17.33333px;
+  border-radius: 3px;
+  width: 100%;
+  height: 31px;
+  font-size: 14px;
+}
+.TalionNav-primary .search-box input[type=search] :focus {
+  outline: none;
+}
+.TalionNav-primary .nav-btns {
+  flex: 1;
+  font-size: 15px;
+  line-height: 21px;
+  color: #3ba94d;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.TaliobNav a {
+  text-decoration: none;
+}
+.TalionNav-primary .nav-btns .nav-btn-item {
+  padding: 0 15px;
+}
+.TalionNav-primary .nav-btns .to_pc {
+  display: inline-block;
+  width: 20px;
+  height: 19px;
+  background: url("./img/3.png") 100% no-repeat;
+  background-size: contain;
+}
+.TalionNav-primary .nav-btns :first-child,
+.TalionNav-primary .nav-btn-item :first-child {
+  padding-left: 0;
+}
+.TalionNav-primary .nav-btns :last-child,
+.TalionNav-primary .nav-btn-item :last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+.TalionNav-static :after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #dfdfdf;
+  border-left: none;
+  border-right: none;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5) translateX(-0.5px) translateY(-0.5px);
+  transform-origin: left top;
+  pointer-events: none;
+}
+.TalionNav-static {
+  left: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0 18px;
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.TalionNav-static>* {
+  word-spacing: nowrap;
+}
+.TalionNav-static>a {
+  font-size: 0;
+}
+.TalionNav .icon-wrap {
+  margin-right: 10px;
+}
+.TalionNav .icon-wrap .icon {
+  width: 39px;
+  height: 39px;
+}
+.TalionNav .info {
+  flex: 1;
+}
+.TalionNav .info h2 {
+  font-size: 15px;
+  line-height: 21px;
+  color: #191919;
+  margin: 0;
+}
+.TalionNav .info p {
+  font-size: 11px;
+  line-height: 16px;
+  color: #818181;
+  margin: 0;
+}
+.TalionNav .btn.green {
+  background-color: #42bd56;
+  color: #fff;
+}
+.TalionNav .btn {
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+}

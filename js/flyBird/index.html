@@ -28,6 +28,8 @@
   <script src="./js/baseObj.js"></script>
   <script src="./js/block.js"></script>
   <script>
+
+    var source = 0
     var jsWrapBG = document.getElementById('wrapBG')
 
     var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
@@ -83,21 +85,31 @@
         var newBlock = new Block()
         newBlock.createBlock()
         blockArr.push(newBlock)
-        console.log(blockDistance);
         }
-        if (blockArr[0].downDivWrap.offsetLeft < -80) {
-          // jsWrapBG.removeChild(blockArr[0].upDivWrap)
-          // jsWrapBG.removeChild(blockArr[0].downDivWrap)
-          delete blockArr[0].upDivWrap
-          delete blockArr[0].downDivWrap
+
+
+        
+          if(bird.div.offsetLeft == blockArr[0].upDivWrap.offsetLeft + 59 ) {
+            source++
+        }
+
+        if (blockArr[0].downDivWrap.offsetLeft < -100) {
+          jsWrapBG.removeChild(blockArr[0].upDivWrap)
+          jsWrapBG.removeChild(blockArr[0].downDivWrap)
+
           // blockArr[0].downDivWrap.remove()
           // blockArr[0].upDivWrap.remove()
           blockArr.shift()
+
+         
           
         }
         
+
       }
     }
+
+
 
     var jsStartBtn = document.getElementById('startBtn')
     jsStartBtn.onclick = function() { //为start按钮添加一个点击事件的处理程序
@@ -117,10 +129,7 @@
 
       var b = new Block()  //创建障碍物
       b.createBlock()
-
       blockArr.push(b)
-
-      console.log(typeof jsWrapBG);
       
     }
 
