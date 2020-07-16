@@ -19,6 +19,10 @@
     <button id="startBtn"></button>
     <!--开始按钮-->
 
+    <div id="sourceImg1" class="img"></div>
+    <div id="sourceImg2" class="img"></div>
+    <div id="sourceImg3" class="img"></div>
+
     <div id="grassLand1"></div>
     <div id="grassLand2"></div>
 
@@ -28,13 +32,16 @@
   <script src="./js/baseObj.js"></script>
   <script src="./js/block.js"></script>
   <script>
-
-    var source = 0
     var jsWrapBG = document.getElementById('wrapBG')
-
     var jsHeadTitle = document.getElementById('headTitle') //获取标题容器
     var jsHeadBird = document.getElementById('headBird') //获取小鸟
+    var sourceImg = document.getElementsByClassName('img')
+
+
+
     var blockArr = [] //装管道
+
+    var source = 0
 
     var Y = 3
     var index = 0
@@ -49,7 +56,7 @@
         index = 0
       }
     }
- 
+
     var jsGrassLand1 = document.getElementById('grassLand1')
     var jsGrassLand2 = document.getElementById('grassLand2')
     var landTimer = setInterval(landRun, 30) //让草地动
@@ -72,26 +79,46 @@
           var x = baseObj.rectangleCrashExamine(blockArr[i].downDivWrap, bird.div)
           var y = baseObj.rectangleCrashExamine(blockArr[i].upDivWrap, bird.div)
           var z = bird.div.offsetTop >= 390
-          if(x || y || z) {
+          if (x || y || z) {
             clearInterval(landTimer)
             jsWrapBG.onclick = null
             bird.fallSpeed = 0
           }
-          
+
         }
 
-        var blockDistance = baseObj.randomNum(120,350) //管道之间的间隔
+        var blockDistance = baseObj.randomNum(120, 350) //管道之间的间隔
         if (blockArr[blockArr.length - 1].downDivWrap.offsetLeft < (450 - blockDistance)) {
-        var newBlock = new Block()
-        newBlock.createBlock()
-        blockArr.push(newBlock)
+          var newBlock = new Block()
+          newBlock.createBlock()
+          blockArr.push(newBlock)
         }
 
-
-        
-          if(bird.div.offsetLeft == blockArr[0].upDivWrap.offsetLeft + 59 ) {
-            source++
+        if (bird.div.offsetLeft == blockArr[0].upDivWrap.offsetLeft + 59) { // 判断小鸟是否通过管道的右端，通过则加一分
+          source++//计分
+          console.log(source);
         }
+        if (source <=9) {  //判断分数小于9分显示第一个分数图片
+          sourceImg[0].style.background = 'url(./img/' + source + '.jpg'
+        }
+        if (source > 9) {  //判断分数大于9分显示第二个分数图片
+          sourceImg[1].style.display = 'block'
+          sourceImg[0].style.background = 'url(./img/' + source % 10 + '.jpg'
+          sourceImg[1].style.background = 'url(./img/' + Math.floor(source/10) + '.jpg'
+        }
+        if (source > 99) {  //判断分数大于99分显示第三个分数图片
+          sourceImg[2].style.display = 'block'
+          sourceImg[0].style.background = 'url(./img/' + source % 10 + '.jpg'
+          sourceImg[1].style.background = 'url(./img/' + Math.floor((source-Math.floor(source/100)*100)/10) + '.jpg'
+          sourceImg[2].style.background = 'url(./img/' + Math.floor(source/100) + '.jpg'
+        }
+        if (source > 999) {
+          alert('牛b啊')
+          clearInterval(landTimer)
+          jsWrapBG.onclick = null
+            bird.fallSpeed = 0
+        }
+
 
         if (blockArr[0].downDivWrap.offsetLeft < -100) {
           jsWrapBG.removeChild(blockArr[0].upDivWrap)
@@ -100,41 +127,34 @@
           // blockArr[0].downDivWrap.remove()
           // blockArr[0].upDivWrap.remove()
           blockArr.shift()
-
-         
-          
         }
-        
-
       }
     }
 
 
-
     var jsStartBtn = document.getElementById('startBtn')
-    jsStartBtn.onclick = function() { //为start按钮添加一个点击事件的处理程序
+    jsStartBtn.onclick = function () { //为start按钮添加一个点击事件的处理程序
       jsHeadTitle.style.display = 'none'
       jsStartBtn.style.display = 'none'
       clearInterval(headWaveTimer) //关闭标题摆动的定时器
-      
-      bird.showBird(jsWrapBG)  // 插入小鸟到界面中
-      
-      bird.flyBird()  // 小鸟下落
+
+      bird.showBird(jsWrapBG) // 插入小鸟到界面中
+
+      bird.flyBird() // 小鸟下落
 
       jsWrapBG.onclick = function () { //点击屏幕响应
         bird.fallSpeed = -8
       }
 
-      bird.wingWave() 
+      bird.wingWave()
 
-      var b = new Block()  //创建障碍物
+      var b = new Block() //创建障碍物
       b.createBlock()
       blockArr.push(b)
-      
+
+      sourceImg[0].style.display = 'block'
+
     }
-
-
- 
   </script>
 </body>
 

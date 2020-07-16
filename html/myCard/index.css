@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-size: 30px;
+}
+section {
+  margin-bottom: 0.667rem;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.card {
+  padding: 1rem;
+  background-color: #f5fafe;
+}
+.card-wrapper {
+  width: 100%;
+}
+.card-wrapper .user-info {
+  width: 100%;
+  font-size: 0;
+}
+.card-wrapper .user-info__pic {
+  width: 100%;
+}
+.card-wrapper .user-info__pic img {
+  width: 100%;
+}
+.card-wrapper .user-info__desc {
+  padding: 0.333rem 0.667rem;
+}
+.card-wrapper .user-info__desc .name {
+  font-size: 1rem;
+}
+.card-wrapper .user-info__desc .name .sex {
+  width: 0.67rem;
+  height: 0.6rem;
+  display: inline-block;
+  background: url("./img/sexf.png");
+  background-size: 100% 100%;
+}
