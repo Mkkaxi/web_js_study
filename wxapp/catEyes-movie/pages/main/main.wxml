@@ -39,9 +39,11 @@
           </view>
 
           <view class="item_actor">
-          </view>
             {{item.actor}}
-          <view>
+          </view>
+           
+          <view class="item_time">
+            {{item.time}}
           </view>
 
           <view>
@@ -49,8 +51,8 @@
 
         </view>
 
-        <view class="item_right">
-          按钮
+        <view class="item_right" style="background-color: {{item.isShow?'red':'blue'}};">
+          <text>{{item.isShow?'购买':'预售'}}</text>
         </view>
 
 

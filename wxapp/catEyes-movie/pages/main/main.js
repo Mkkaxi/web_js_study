@@ -30,7 +30,7 @@ Page({
         isShow: 1,
         name: "璀璨薪火3D",
         imgUrl: "https://p0.meituan.net/moviemachine/1b6ca45db703c6df1c1ad8412ad0639a633073.jpg@1l_1e_1c_128w_180h",
-        actor: "",
+        actor: "艾力乃孜·热合米图力",
         time: "2020-07-20",
         wantSee: '1248'
       }
