@@ -1,0 +1,63 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+  <scroll-view scroll-y style="width: 100%;">
+    <view class="header">
+
+      <view class="header_hd">
+        <text>南昌</text>
+        <view class="downtips"></view>
+      </view>
+
+      <view class="header_bd">
+      <view class="header_bd-hot header_bd-btn" style="color:{{isLeft?'#ef4238':'#666666'}}"  bindtap="tapChangeHot">正在上映</view>
+        <view class="header_bd-waiting header_bd-btn" style="color:{{isLeft?'#666666':'#ef4238'}}" bindtap="tapChangeWaiting">即将上映</view>
+      <view class="bottomLine" style="left:{{isLeft?'73px':'143px'}}"></view>
+      </view>
+      
+      <view class="header_ft">
+        <image src="../../images/icon.png"></image>
+      </view>
+    </view>
+
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}"  interval="{{interval}}" circular="{{circular}}"  duration="{{duration}}">
+      <swiper-item wx:for="{{imgUrls}}" wx:key="index">
+        <image class="slide-image" width='100%' src="{{item}}"></image>
+      </swiper-item>
+
+    </swiper>
+
+    <view wx:for="{{movieList}}" wx:key="index">
+
+      <view class="flex item">
+        <view class="item_left">
+          <image src="{{item.imgUrl}}" />
+        </view>
+
+        <view class="item_middle">
+          <view class="item_title">
+            {{item.name}}
+          </view>
+
+          <view class="item_actor">
+          </view>
+            {{item.actor}}
+          <view>
+          </view>
+
+          <view>
+          </view>
+
+        </view>
+
+        <view class="item_right">
+          按钮
+        </view>
+
+
+      </view>
+
+    </view>
+
+
+  </scroll-view>
+</view>

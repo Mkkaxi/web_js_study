@@ -38,6 +38,12 @@ h1
 h1, h2,h3 
   font-weight normal
 
+body .page, body #app, body .msite-max-width, body .msite-fixed-max-width
+  max-width 650px
+
+section
+  margin-bottom 30px
+
 
 .TalionNav
   width 100%
@@ -114,7 +120,7 @@ h1, h2,h3
       width 100%
       height 31px
       font-size 14px
-      :focus
+      &:focus
         outline none
     
 .TalionNav-primary
@@ -150,18 +156,18 @@ h1, h2,h3
 .TalionNav-primary
   .nav-btns
   .nav-btn-item
-    :first-child
+    &:first-child
       padding-left 0
 
 .TalionNav-primary
   .nav-btns
   .nav-btn-item
-    :last-child
+    &:last-child
       padding-right 0
       border-right 0
 
 .TalionNav-static
-  :after
+  &:after
     content ''
     position absolute
     top 0
@@ -229,7 +235,255 @@ h1, h2,h3
     text-align center
     font-size 13px
     line-height 30px
-    
 
+.page
+  padding-top 0
+  background-color #fff
+  margin 0 auto
+  overflow-x hidden
+  .subject-header-wrap
+    padding 20px 15px 15px
+    .sub-info
+      min-height 165px
+      &:after
+        content ''
+        display table
+        clear both
+    .sub-cover
+      float left
+      position relative
+      z-index 1  
+      img   
+        width 100px
+        height 140px
+        border-radius 4px
+        border 1px solid rgba(0,0,0,0.05)
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15)
+      .cover-count
+        position absolute
+        right 1px
+        bottom 4px
+        z-index 1
+        width 20px
+        height 20px
+        text-align center
+        color #ffffff
+        background rgba(0,0,0,0.5)
+        line-height 20px
+        border-radius 3px
+        font-size 11px
+        padding 1px 5px
+
+    .sub-detail
+      margin-left 115px
+      line-height 1.4
+      min-height 140px
+      position relative
+      z-index 1
+    .sub-meta    
+      font-size 11px
+      padding 5px 0 5px  
+      color rgba(255,255,255,0.7)
+
+
+
+
+.subject-header-wrap
+  .sub-detail
+    .sub-title
+      font-size 23px
+    .sub-original-title
+      font-size 15px
+  .sub-detail.dark_bg
+    .sub-title
+      color #fff
+    .sub-original-title
+      color #fff
+    
+  
+
+
+
+.subject-mark
+  margin-top 10px    
+
+  .mark-item
+    margin-bottom 30px
+    display flex
+    -webkit-box-align: center
+    align-items center
+
+    a 
+      height 30px
+      line-height 1
+      display flex
+      align-items center
+      background-color #fff
+      border-radius 4px
+      margin-right 10px
+      color #191919
+      font-size 13px
+      text-align center
+      justify-content center
+      max-width 50%
+      -webkit-box-flex: 1
+      flex 1
+      &:last-child
+        margin 0
+    
+    .wish
+      background-image: url(https://img3.doubanio.com/f/talion/cf2ab22e9cbc28a2c43de53e39fce7fbc93131d1/pics/card/ic_mark_todo_s.png)
+    .done
+      background-image: url(https://img3.doubanio.com/f/talion/78fc5f5f93ba22451fd7ab36836006cb9cc476ea/pics/card/ic_mark_done_s.png)
+    .icon
+      display inline-block
+      vertical-align middle
+      line-height 1
+      width 14px
+      height 14px
+      margin-right 5px
+      background-repeat: no-repeat
+      background-position: center
+      background-size contain
+
+  
+.sub-score
+  background-color rgba(0,0,0,0.1)
+  border-radius 0.06rem
+  padding 0.1rem 0.15rem 0.13rem
+  margin-top -0.1rem
+  .sub-trademark
+    display flex
+    justify-content space-between
+    align-items center
+  .score-write
+    font-size 0.11rem
+    color #ffffff
+    border 1px solid #f9f9f9
+    border-radius 0.04rem
+    line-height 1
+    padding 0.06rem 0.05rem
+    box-sizing border-box
+  .sub-content
+    display flex
+    justify-content space-between
+    align-items center
+  .sub-rating
+    display inline-flex
+    width 50%
+    position relative
+    vertical-align bottom
+    justify-content flex-start
+    align-items center
+    &:after
+      content ''
+      width .5px
+      height 38px
+      position absolute
+      z-index 1
+      top 6px
+      right 0
+      background rgba(255,255,255,0.2)
+  .score-num
+    display inline-block
+    font-size 0.36rem
+    line-height 0.5rem
+    margin-right 5px
+    color #ffffff
+  .star-display
+    display inline-block
+    box-sizing border-box
+  .rating-star-medium-full, .rating-star-medium-half, .rating-star-medium-empty
+    width 0.13rem
+    height 0.13rem
+    background-size 0.13rem 0.13rem
+  .rating-star-medium-half
+    background-image: url(./img/1.svg)
+  p
+    margin 0
+
+  .done-count
+    display block
+    font-size 0.12rem
+    color rgba(255,255,255,0.7)
+    line-height 1
+    margin-top 0.05rem
+    em  
+      display inline-block
+      font-size 0.12rem
+      transform: scale(0.9)
+      font-style normal
+  .sub-chart
+    display inline-block
+    vertical-align middle
+    width 50%
+    .star-stats
+      line-height 0
+      position relative
+      text-align right
+    .stars-wrap, .chart-wrap
+      display inline-block
+      vertical-align middle
+      line-height 7px
+      margin-bottom 1px
+    .stars-wrap
+      margin-right 5px
+    .chart-wrap
+      width 1rem
+      height 0.03rem
+      background rgba(255,255,255,0.2)  
+      border-radius 3px
+      position relative
+      z-index 0
+    .rating-star-icon
+      display inline-block
+      width 7px
+      height 7px
+      background-size 7px 7px
+      background-image url()  
+    .rating-progress
+      display inline-block
+      background #ffac2c
+      height 0.03rem
+      border-radius 3px
+      position absolute
+      z-index 1
+      top 0
+      left 0
+
+
+.rating-stars
+  display inline-block
+  vertical-align middle
+  .rating-star
+    display inline-block
+    margin-right 1px
+    background-color transparent
+    background-repeat: no-repeat
+
+.rating-star-medium-full
+  background-image: url(./img/4.png)
+
+
+
+.subject-header-wrap
+  .sub-trademark
+    font-size 11px
+    color #fff
+    position relative
+    line-height 26px
+    margin-bottom 1px
+    em
+      display inline-block
+      font-size 10px
+      position absolute
+      z-index 1
+      top -1px
+      font-style normal
+      transform: scale(0.7)
+
+
+    
+    
 
 
