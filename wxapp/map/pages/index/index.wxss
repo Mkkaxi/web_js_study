@@ -1,0 +1,166 @@
+.adr {
+  position: fixed;
+  top: 2vh;
+  width: 92vw;
+  background-color: #fff;
+  height: 90rpx;
+  left: 4vw;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-60%);
+}
+
+.search {
+  width: 260rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.search-text {
+  font-size: 24rpx;
+}
+
+.position {
+  width: 55rpx;
+  height: 55rpx;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40rpx;
+}
+
+.bikeAndP {
+  background-color: #fff;
+  height: 160rpx;
+  width: 65rpx;
+  position: fixed;
+  right: 20rpx;
+  top: 41vh;
+  border-radius: 18rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.car {
+  margin-bottom: 20rpx;
+  height: 55rpx;
+  width: 45rpx;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.p {
+  height: 40rpx;
+  width: 45rpx;
+}
+
+
+.location {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  position: fixed;
+  right: 20rpx;
+  top: 58vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location cover-image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.set {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  position: fixed;
+  right: 20rpx;
+  top: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set cover-image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.remind {
+  position: fixed;
+  width: 94vw;
+  background-color: #fff;
+  height: 70rpx;
+  left: 3vw;
+  bottom: 13vh;
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+  opacity: 0.9; 
+}
+
+.remind-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 20rpx;
+}
+
+.remind-text {
+  font-size: 25rpx;
+}
+
+.scan {
+  position: fixed;
+  bottom: 3vh;
+  width: 94vw;
+  background-color: #262a30;
+  height: 100rpx;
+  left: 3vw;
+  border-radius: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content cover-image {
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.content-text {
+  color: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 29rpx;
+  letter-spacing: 2rpx;
+}
+
+

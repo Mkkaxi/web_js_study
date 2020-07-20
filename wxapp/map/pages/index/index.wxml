@@ -1,0 +1,62 @@
+
+<view>
+  <map style="width: 100%; height: 100vh;" longitude="115.828400" latitude="28.714180" scale='18'>
+
+    <cover-view class="adr"> 
+      <cover-view class="" scroll-top="0">
+        hhhhhhhhhhh
+      </cover-view>
+    </cover-view>
+  
+    <cover-view class="wrapper">
+      <cover-view class="search">
+        <cover-image class="search-img" src="../../img/search.png">
+        </cover-image>
+        <cover-view class="search-text">
+          搜索目的地停车点
+        </cover-view>
+      </cover-view>
+  
+      <cover-image class="position" src="../../img/po.png">
+      </cover-image>
+    </cover-view>
+
+    <cover-view class="bikeAndP">
+      <cover-image class="car" src="../../img/light2.png">
+      </cover-image>
+      <cover-image class="p" src="../../img/p1.png">
+      </cover-image>
+    </cover-view>
+  
+    <cover-view class="location">
+      <cover-image src="../../img/location.png">
+      </cover-image>
+    </cover-view>
+  
+    <cover-view class="set">
+      <cover-image src="../../img/set.png">
+      </cover-image>
+    </cover-view>
+  
+    <cover-view class="remind">
+      <cover-image class="remind-icon" src="../../img/ling.png">
+      </cover-image>
+      <cover-view class="remind-text">
+         规范骑行，安全常在！
+      </cover-view>
+  
+    </cover-view>
+  
+    <cover-view class="scan">
+      <cover-view class="content" scroll-top="0">
+        <cover-image class="content-img" src="../../img/scan.png">
+        </cover-image>
+  
+        <cover-view class="content-text">
+          扫码用车
+        </cover-view>
+      </cover-view>
+  
+    </cover-view>
+  </map>
+</view>
