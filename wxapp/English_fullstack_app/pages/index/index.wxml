@@ -1,0 +1,25 @@
+
+<!-- 不是简单的标签，是系统提供的组件 60%-70& 都不需要自己做
+<progress percent="100" active show-info /> -->
+<!-- <map scale='18' style="width: 100%; height: 61.5vh;"
+ markers="{{markers}}" longitude="115.828400"  latitude="28.714180" ></map> -->
+
+
+
+ <loading hidden="{{isHidden}}">数据加载中</loading>
+
+ <view class="wrapper">
+   <view class="group" wx:for="{{articleList}}" wx:for-item="group">
+    <view class="group-bar">
+      <view class="group-title">{{group.date}}</view>
+    </view>
+
+    <view class="group content">
+      <view class="group-content-item" wx:for="{{group.articles}}" wx:for-item="article">
+        <view class="group-content-item-desc">{{article.title}}</view>
+        <image src="{{item.pic}}">
+        </image>
+      </view>
+    </view>
+   </view>
+ </view>
