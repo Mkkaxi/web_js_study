@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+}
+
+.kind-title {
+  padding: 25rpx;
+  text-align: center;
+}
+
+scroll-view {
+  border-left: 1px solid #8d8a8a;
+}
+
+.scroll-img {
+  width: 80%;
+  height: 180rpx;
+  margin: 0 auto;
+  padding: 40rpx 0;
+}
+
+.scroll-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-title {
+  color: #ab956d;
+  padding: 20rpx 0;
+  text-align: center;
+}
+
+.content {
+  width: 33.3%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+
+.content-img {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.content-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.content-name {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
