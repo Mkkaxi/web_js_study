@@ -39,3 +39,14 @@
 //   tmp = 'abc'
 //   let tmp //清除除本区域外的声明
 // }
+
+
+// const num = 222
+// num = 555
+// console.log(num);
+
+if(true) {
+  const age = 18
+
+}
+console.log(age);
