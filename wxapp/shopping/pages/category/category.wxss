@@ -2,9 +2,24 @@
   display: flex;
 }
 
+.selected {
+  color: #ab956d;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ab956d;
+  width: 6rpx;
+  height: 80rpx;
+}
+
+
 .kind-title {
   padding: 25rpx;
   text-align: center;
+  position: relative;
 }
 
 scroll-view {

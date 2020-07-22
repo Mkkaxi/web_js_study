@@ -1,2 +1,31 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="main">
+  <view>
+    <view class="cart-box">
+      <view class="cart-list" wx:for="{{carts}}" wx:key="index"> 
+        <icon class="cart-pro-select" type="success" size="23" color="red" ></icon>
+
+        <navigator class="cart-pro-goods" url="">
+          <image class="cart-thumb" src="{{item.image}}" />
+        </navigator>
+
+        <text class="cart-pro-name">{{item.title}}</text>
+        <text class="cart-pro-price">{{item.price}}</text>
+
+        <view class="cart-count-box">
+          <text class="cart-count-down">-</text>
+          <text class="cart-count-num">{{item.num}}</text>
+          <text class="cart-count-add">+</text>
+        </view>
+
+        <text class="cart-del">x</text>
+
+      </view>
+    </view>
+
+    <view class="cart-footer">
+      <icon class="cart-total-select" type="success" size="23" color="red"></icon>
+      <text>全选</text>
+      <text class="cart-total-price">￥{{totalPrice}}</text>
+    </view>
+  </view>
+</view>

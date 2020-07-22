@@ -2,13 +2,15 @@
 
   <view class="kind" style="width: 20%;">
     <block wx:for="{{category}}" wx:key="{{index}}">
-      <view class="kind-title" id="{{item.id}}" bindtap="changeMenu">
+      <view class="kind-title {{getId==item.id?'selected':''}}" id="{{item.id}}" bindtap="changeMenu">
+        <view wx:if="{{getId==item.id}}" class="line">
+        </view>
         <text>{{item.name}}</text>
       </view>
     </block>
   </view>
 
-  <scroll-view class="scroll" scroll-into-view="{{getId}}" scroll-y="true" style="height: 100vh; width: 80%;" scroll-with-animation="true">
+  <scroll-view class="scroll" scroll-into-view="{{getId}}" scroll-y="true" style="height: 100vh; width: 80%;" scroll-with-animation="true" bindscroll="scrollMove">
     <block wx:for="{{detail}}" wx:key="{{index}}">
       <view style="height: 100vh;"  id="{{item.id}}" >
         <view class="scroll-img">
