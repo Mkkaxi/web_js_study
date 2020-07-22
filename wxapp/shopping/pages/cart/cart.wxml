@@ -2,7 +2,7 @@
   <view>
     <view class="cart-box">
       <view class="cart-list" wx:for="{{carts}}" wx:key="index"> 
-        <icon class="cart-pro-select" type="success" size="23" color="red" ></icon>
+        <icon class="cart-pro-select" type="success" size="23" color="{{item.selected?'red':'#cdcdcd'}}" bindtap=""></icon>
 
         <navigator class="cart-pro-goods" url="">
           <image class="cart-thumb" src="{{item.image}}" />
@@ -23,7 +23,7 @@
     </view>
 
     <view class="cart-footer">
-      <icon class="cart-total-select" type="success" size="23" color="red"></icon>
+      <icon class="cart-total-select" type="success" size="23" color="{{allSelected?'red':'white'}}" bindtap=""></icon>
       <text>全选</text>
       <text class="cart-total-price">￥{{totalPrice}}</text>
     </view>

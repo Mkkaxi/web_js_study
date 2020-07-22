@@ -6,7 +6,8 @@ Page({
    */
   data: {
     carts: [],
-    totalPrice: 0
+    totalPrice: 0,
+    allSelected:''
   },
 
   /**
