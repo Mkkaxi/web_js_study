@@ -4,10 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    banners: [],
+    recommendList: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,32 +14,32 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
+    wx.request({
+      url: 'http://neteasecloudmusicapi.zhaoboy.com/banner',
+      
+      // 回调函数， 成功 200
+
+      success: (data) => {
+        console.log(data,'//////');
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+          banners: data.data.banners
         })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+      },
+
+    })
+
+    wx.request({
+      url: 'http://neteasecloudmusicapi.zhaoboy.com/personalized',
+
+      success: (res) => {
+        // console.log(res);
+        this.setData({
+          recommendList: res.data.result
+        })
+      },
+ 
+    })
+
   },
   getUserInfo: function(e) {
     console.log(e)
