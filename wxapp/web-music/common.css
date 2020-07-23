@@ -1,0 +1,7 @@
+#banner{
+  width: 100%;
+  overflow: hidden;
+}
+#banner img {
+  max-width: 100%;
+}
