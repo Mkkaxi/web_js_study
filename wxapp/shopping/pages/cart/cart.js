@@ -7,8 +7,71 @@ Page({
   data: {
     carts: [],
     totalPrice: 0,
-    allSelected:''
+    // colorSelect:'red',
+    selectAllStatus: 'true'
   },
+
+  getTotalPrice() {
+    let carts = this.data.carts
+    let total = 0
+    
+    for(let i = 0; i < carts.length; i++) {
+      if(carts[i].selected) {
+        total = total + (carts[i].num * carts[i].price)
+      }
+    }
+    this.setData({
+      totalPrice: total.toFixed(2)
+    })
+  },
+
+
+  selectedList(e) {
+    // console.log(e);
+    let index = e.currentTarget.dataset.index
+    let selected = `carts[${index}].selected` // selected为拼接字符串
+
+
+    this.setData({
+      [selected]: !this.data.carts[index].selected
+    })
+
+    let carts = this.data.carts
+    for (let i = 0; i < carts.length; i++) {
+      if(!carts[i].selected) {
+        this.setData({
+          selectAllStatus: false
+        })
+        break;
+      }
+      else {
+        this.setData({
+          selectAllStatus: true
+        })
+      }
+    }
+
+    this.getTotalPrice()
+
+  },
+
+  selectAll() {              //控制全选按钮的点击事件
+    // 来回改变数据源中的selectAllStatus
+    let selectAllStatus = this.data.selectAllStatus
+    selectAllStatus = !selectAllStatus
+    //把carts数组里面的每一条数据里面的selected改成false
+      let carts = this.data.carts
+      for(let i = 0; i < carts.length; i++) {
+        carts[i].selected = selectAllStatus
+      }
+
+    this.setData({
+      selectAllStatus: selectAllStatus,
+      carts: carts
+    })
+    
+    this.getTotalPrice()
+  },                    
 
   /**
    * 生命周期函数--监听页面加载
@@ -48,6 +111,7 @@ Page({
             selected: true
           }]
       })
+      this.getTotalPrice()
     }, 1000)
   },
 
