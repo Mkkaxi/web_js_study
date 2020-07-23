@@ -1,6 +1,8 @@
 
 <view>
-  <map style="width: 100%; height: 100vh;" longitude="115.828400" latitude="28.714180" scale='18'>
+  <map style="width: 100%; height: 100vh;"
+   longitude="115.828400" latitude="28.714180" scale='18'
+   markers="{{markers}}">
 
     <cover-view class="adr"> 
       <cover-view class="" scroll-top="0">

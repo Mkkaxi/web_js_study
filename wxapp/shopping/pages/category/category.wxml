@@ -1,7 +1,7 @@
 <view class="wrapper">
 
   <view class="kind" style="width: 20%;">
-    <block wx:for="{{category}}" wx:key="{{index}}">
+    <block wx:for="{{category}}" wx:key="index">
       <view class="kind-title {{getId==item.id?'selected':''}}" id="{{item.id}}" bindtap="changeMenu">
         <view wx:if="{{getId==item.id}}" class="line">
         </view>
@@ -10,8 +10,8 @@
     </block>
   </view>
 
-  <scroll-view class="scroll" scroll-into-view="{{getId}}" scroll-y="true" style="height: 100vh; width: 80%;" scroll-with-animation="true" bindscroll="scrollMove">
-    <block wx:for="{{detail}}" wx:key="{{index}}">
+  <scroll-view class="scroll" scroll-into-view="{{getId}}" scroll-y="true" style="height: 100vh; width: 80%;" scroll-with-animation="true">
+    <block wx:for="{{detail}}" wx:key="index">
       <view style="height: 100vh;"  id="{{item.id}}" >
         <view class="scroll-img">
           <image src="{{item.banner}}"></image>
@@ -22,7 +22,7 @@
         </view>
 
 
-        <block wx:for="{{item.detail}}" wx:key="{{index}}" wx:for-item="det">
+        <block wx:for="{{item.detail}}" wx:key="index" wx:for-item="det">
           <view class="content">
             <view class="content-img">
               <image src="{{det.thumb}}"></image>

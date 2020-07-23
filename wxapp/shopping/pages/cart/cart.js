@@ -73,6 +73,37 @@ Page({
     this.getTotalPrice()
   },                    
 
+
+  down(e) {
+    let index = e.currentTarget.dataset.index
+    let allNum = `carts[${index}].num`
+    if (this.data.carts[index].num >  0) {
+      this.setData({
+        [allNum]: this.data.carts[index].num - 1
+      })
+    }
+    this.getTotalPrice()
+  },
+
+  add(e) {
+    let index = e.currentTarget.dataset.index
+    let allNum = `carts[${index}].num`
+    this.setData({
+      [allNum]: this.data.carts[index].num + 1
+    })
+    this.getTotalPrice()
+  },
+
+  delete(e) {
+    let carts = this.data.carts
+    let index = e.currentTarget.dataset.index
+    carts.splice(index,1)
+    console.log(carts)
+    this.setData({
+      carts:carts
+    })
+    this.getTotalPrice()
+  },
   /**
    * 生命周期函数--监听页面加载
    */

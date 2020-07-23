@@ -13,37 +13,33 @@ Page({
     // console.log(this.data.getId);
   },
 
-  // setInterval(scrollMove, 100),
 
-  // function scrollMove(e)
+  //  scrollMove(e)
   // {
-  //   // console.log(e)
-  //   // console.log(this.data.width);
-  //   // console.log(this.data.height);
-  //   if(e.detail.scrollTop / this.data.height >= 1) {
+  //   if(e.detail.scrollTop / this.data.height == 1) {
   //     this.setData({
   //       getId: 'shucai'
   //     })
   //   }
-  //   else if(e.detail.scrollTop / this.data.height >= 2)
+  //   else if(e.detail.scrollTop / this.data.height == 2)
   //   {
   //     this.setData({
   //       getId: 'chaohuo'
   //     })
   //   }
-  //   else if(e.detail.scrollTop / this.data.height >= 3)
+  //   else if(e.detail.scrollTop / this.data.height == 3)
   //   {
   //     this.setData({
   //       getId: 'dianxin'
   //     })
   //   }
-  //   else if(e.detail.scrollTop / this.data.height >= 4)
+  //   else if(Math.floor(e.detail.scrollTop / this.data.height) == 4)
   //   {
   //     this.setData({
   //       getId: 'cucha'
   //     })
   //   }
-  //   else if(e.detail.scrollTop / this.data.height >= 5)
+  //   else if(Math.floor(e.detail.scrollTop / this.data.height) == 5)
   //   {
   //     this.setData({
   //       getId: 'danfan'

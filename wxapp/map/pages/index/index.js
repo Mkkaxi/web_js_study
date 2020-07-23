@@ -3,13 +3,62 @@
 const app = getApp()
 
 Page({
-  data: {
 
+  
+  createBike: function() {
+    let markers = this.data.markers
+    for(let i = 0; i < 10; i++) {
+      markers.push({
+        iconPath: "../../img/bike.png",
+        latitude: Math.random()/10000 + 28.714100,
+        longitude: Math.random()/10000 + 115.828000,
+        width: 30,
+        height: 30
+      })
+    }
+
+    for(let i = 0; i < 10; i++) {
+      markers.push({
+        iconPath: "../../img/bike.png",
+        latitude: Math.random()/10000 + 28.713500,
+        longitude: Math.random()/10000 + 115.827800,
+        width: 30,
+        height: 30
+      })
+    }
+
+    for(let i = 0; i < 15; i++) {
+      markers.push({
+        iconPath: "../../img/bike.png",
+        latitude: Math.random()/500 + 28.714100,
+        longitude: Math.random()/500 + 115.828000,
+        width: 30,
+        height: 30
+      })
+    }
+    this.setData({
+      markers:markers
+    })
     
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  
+  data: {
+    markers: [{
+      iconPath: "../../img/bike.png",
+      latitude: 28.714180,
+      longitude: 115.828400,
+      width: 30,
+      height: 30
+    },
+    {
+      iconPath: "../../img/bike.png",
+      latitude: 28.714100,
+      longitude: 115.828000,
+      width: 30,
+      height: 30
+    }
+  ],
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -18,32 +67,8 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+
+    this.createBike()
   },
   getUserInfo: function(e) {
     console.log(e)
