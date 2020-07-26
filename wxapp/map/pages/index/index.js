@@ -69,6 +69,8 @@ Page({
   onLoad: function () {
 
     this.createBike()
+
+    console.log(app.globalData.statusBarHeight);
   },
   getUserInfo: function(e) {
     console.log(e)

@@ -1,33 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-
-
-
-  </style>
-</head>
-
-<body>
-  <div class="container"
-    style="width: 400px; height: 50px; padding: 10px; background-color: black;box-sizing: border-box;">
-    <div style="width: 100%;height: 100%;background-color: yellow;display: flex;">
-      <div class=" container-div1" style="width: 50%;height: 100%; background-color: green;">
-
-      </div>
-      <div class="container-div2" style="width: 50%;height: 100%; background-color: red;">
-
-      </div>
-    </div>
-  </div>
-
-
-
-
-</body>
-
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+		.outer{
+            	width: 400px;
+            	height: 50px;
+            	background-image: url(http://placekitten.com/350/200);             
+                    }             
+			
+			
+	        .inner:before{
+            	content: '';
+            	position: absolute;
+            	top: 0;
+            	left: 0;
+            	width: 50%;
+            	height: 100%;
+            	background-image: radial-gradient(circle at 0% 50% ,transparent 0%, transparent 20px,blue 20px, blue 100%);             
+			}             
+			
+			
+		.inner{
+            	position: relative;
+            	height: inherit;             
+			}             
+			
+		.inner:after{
+            	content: '';
+            	position: absolute;
+            	top: 0;
+            	right: 0;
+            	width: 50%;
+            	height: 100%;
+            	background-image: radial-gradient(circle at 100% 50% ,transparent 0%, transparent 20px,blue 20px, blue 100%);             
+			}  
+			
+			.box1 {
+    			width: 20px;
+    			height: 50px;
+    			background: white;
+    			background: radial-gradient(circle at 0 50%, transparent 10px, white 11px) top left;
+    			background-size: 100% 100%;
+    			background-repeat: no-repeat;
+    			border: 1px solid red;
+    			/*同步修改radial-gradient(circle at 0 50%, transparent 10px, white 11px) top left;中的10px 与 11px 可以达到修改凹陷半圆半径的目的*/
+			}	
+			
+			.box2 {
+				width: 20px;
+    			height: 50px;
+    			background: #58a;
+    			background: radial-gradient(circle at 100% 50%, transparent 15px, white 16px) right top;
+    			background-size: 100% 100%;
+    			background-repeat: no-repeat;
+    			border: 1px solid red;
+			}
+			
+			.box3 {
+				width: 200px;
+    			height: 50px;
+    			background: #58a;
+    			background: radial-gradient(circle at 0 50%, transparent 15px, white 16px) top left,
+    						radial-gradient(circle at 100% 50%, transparent 15px, white 16px) right top;
+    			background-size: 50% 100%;
+    			background-repeat: no-repeat;
+    			border: 1px solid red;
+			}
+		</style>
+		<title>半圆凹陷</title>
+	</head>
+	<body
+		<div class="outer">             
+			<div class="inner"></div>         
+		</div>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
 </html>
