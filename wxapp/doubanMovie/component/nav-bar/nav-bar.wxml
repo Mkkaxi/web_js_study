@@ -1,5 +1,5 @@
 <view class="">
-  <view></view>
+  <view style="height:{{topHeight}}px;"></view>
   <view class="container">
     <view style="{{statusBarStyle}}"></view>
     <view class="nav-bar" style="{{navBarStyle}}">

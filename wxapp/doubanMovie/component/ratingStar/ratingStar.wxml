@@ -1,0 +1,4 @@
+<!--component/ratingStar/ratingStar.wxml-->
+<view class="" hover-class="none" hover-stop-propagation="false">
+  x
+</view>

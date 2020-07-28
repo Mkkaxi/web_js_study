@@ -27,16 +27,24 @@ Component({
    */
   data: {
     statusBarStyle: "",
-    navBarStyle: ""
+    navBarStyle: "",
+    topHeight: 0
   },
 
   lifetimes: {
     attached: function() {
       let navBarStyle = `background-color:${this.data.navBarColor};
-      height:48px; color:${this.data.titleColor}`
+      height:${wx.db.navBarHeight}px; color:${this.data.titleColor}`
+
+      let statusBarStyle = `background-color:${this.data.statusBarColor};
+      height:${wx.db.statusBarHeight}px; color:${this.data.titleColor}`
+
+      let topHeight = wx.db.navBarHeight + wx.db.statusBarHeight
 
       this.setData({
-        navBarStyle
+        navBarStyle,
+        statusBarStyle,
+        topHeight
       })
     }
   },

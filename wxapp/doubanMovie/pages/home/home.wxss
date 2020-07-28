@@ -1,1 +1,50 @@
 /* pages/home/home.wxss */
+
+.weui-search-bar {
+  background-color: #42bd55 !important;
+}
+
+.row {
+  margin-bottom: 30rpx;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.title-wrapper .title {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.title-right {
+  display: flex;
+  align-items: center;
+  margin-right: 30rpx;
+}
+
+.title-right .more {
+  font-size: 30rpx;
+  color: #42db55;
+}
+
+.title-right .arrow {
+  width: 12rpx;
+  height: 12rpx;
+  border: 1px solid #42db55;
+  border-left: none;
+  border-top: none;
+  transform: rotate(-45deg);
+}
+
+.scroll-view_movie {
+  height: 402rpx;
+}
+
+.scroll-view_movie .item {
+  margin-left: 30rpx;
+}

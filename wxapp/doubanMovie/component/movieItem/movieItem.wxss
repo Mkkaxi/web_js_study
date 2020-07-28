@@ -1,0 +1,25 @@
+/* component/movieitem/movieItem.wxss */
+.item {
+  display: inline-flex;
+}
+
+.item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 32rpx;
+  font-weight: bold;
+  min-width: 200rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.img {
+  width: 201rpx;
+  height: 301rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}

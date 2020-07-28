@@ -1,0 +1,12 @@
+<!--component/movieitem/movieItem.wxml-->
+<view class="item">
+  <view class="info">
+    <image class="img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3349651850,3911703279&fm=26&gp=0.jpg"/>
+    <view class="name">第一次的离别</view>
+    <view class="score-wrapper">
+      <!-- 星星 -->
+      <ratingStar></ratingStar>
+      <view class="score">9.0</view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,20 @@
 <nav-bar title="首页" statusBarColor="#42bd55" navBarColor="#42bd55" titleColor="#fff"></nav-bar>
+
+<view class="page__bd">
+  <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+</view>
+
+<view class="row">
+  <view class="title-wrapper">
+    <view class="title">影院热映</view>
+    <view class="title-right">
+      <view class="more">查看更多</view>
+      <view class="arrow"></view>
+    </view>
+  </view>
+
+  <scroll-view class="scroll-view_movie" scroll-x="true">
+    <!-- 一部电影 -->
+    <movieItem class="item"></movieItem>
+  </scroll-view>
+</view>
