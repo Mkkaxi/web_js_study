@@ -12,7 +12,6 @@ App({
     }
 
     let info = wx.getSystemInfoSync()
-    console.log(info);
     wx.db.statusBarHeight = info.statusBarHeight
     if (info.platform === 'android') {
       wx.db.navBarHeight = 48

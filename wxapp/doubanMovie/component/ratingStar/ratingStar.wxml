@@ -1,4 +1,8 @@
 <!--component/ratingStar/ratingStar.wxml-->
-<view class="" hover-class="none" hover-stop-propagation="false">
-  x
+<view class="stars-wrapper">
+  <block wx:for="{{starsUrl}}">
+      <image src="{{item}}" />
+  </block>
+  
+  
 </view>

@@ -1,1 +1,13 @@
 /* component/ratingStar/ratingStar.wxss */
+.stars-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.stars-wrapper image {
+  width: 25rpx;
+  height: 25rpx;
+  display: block;
+}

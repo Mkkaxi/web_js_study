@@ -11,7 +11,7 @@
 .name {
   font-size: 32rpx;
   font-weight: bold;
-  min-width: 200rpx;
+  max-width: 200rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -22,4 +22,15 @@
   height: 301rpx;
   margin-bottom: 20rpx;
   border-radius: 10rpx;
+}
+
+.score-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score {
+  font-size: 20rpx;
+  margin-right: 10rpx;
 }

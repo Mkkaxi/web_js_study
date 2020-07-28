@@ -5,7 +5,7 @@
     <view class="name">第一次的离别</view>
     <view class="score-wrapper">
       <!-- 星星 -->
-      <ratingStar></ratingStar>
+      <ratingStar score="5.2"></ratingStar>
       <view class="score">9.0</view>
     </view>
   </view>
