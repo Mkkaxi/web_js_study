@@ -1,0 +1,9 @@
+<view class="">
+  <view></view>
+  <view class="container">
+    <view style="{{statusBarStyle}}"></view>
+    <view class="nav-bar" style="{{navBarStyle}}">
+      {{title}}
+    </view>
+  </view>
+</view>
