@@ -1,6 +1,6 @@
 <!--component/ratingStar/ratingStar.wxml-->
 <view class="stars-wrapper">
-  <block wx:for="{{starsUrl}}">
+  <block wx:for="{{starsUrl}}" wx:key="index">
       <image src="{{item}}" />
   </block>
   
