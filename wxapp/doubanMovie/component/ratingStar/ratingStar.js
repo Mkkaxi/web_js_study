@@ -1,4 +1,7 @@
 // component/ratingStar/ratingStar.js
+// const STAR_ON = "/assets/img/rating_star_small_on.png"
+// const STAR_OFF = "/assets/img/rating_star_small_off.png"
+// const STAR_HALF = "/assets/img/rating_star_small_half.png"
 Component({
   /**
    * 组件的属性列表
@@ -6,7 +9,14 @@ Component({
   properties: {
     score: {
       type: Number,
-      value: ""
+      observer: function() {
+
+      }
+    },
+
+    iconSize: {
+      type: String,
+      value: '26rpx'
     }
   },
 
@@ -52,9 +62,6 @@ Component({
       }
 
       
-
-
-
 
       this.setData({
         starsUrl

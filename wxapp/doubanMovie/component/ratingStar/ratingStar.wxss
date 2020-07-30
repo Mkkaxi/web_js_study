@@ -7,7 +7,5 @@
 
 
 .stars-wrapper image {
-  width: 25rpx;
-  height: 25rpx;
   display: block;
 }

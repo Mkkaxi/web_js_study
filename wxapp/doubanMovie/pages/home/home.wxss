@@ -43,6 +43,7 @@
 
 .scroll-view_movie {
   height: 402rpx;
+  white-space: nowrap;
 }
 
 .scroll-view_movie .item {

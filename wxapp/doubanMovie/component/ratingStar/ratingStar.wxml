@@ -1,7 +1,7 @@
 <!--component/ratingStar/ratingStar.wxml-->
 <view class="stars-wrapper">
   <block wx:for="{{starsUrl}}" wx:key="index">
-      <image src="{{item}}" />
+      <image src="{{item}}" style="width: {{iconSize}}; height: {{iconSize}};" />
   </block>
   
   
