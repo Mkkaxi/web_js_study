@@ -171,7 +171,7 @@
         let angle = clamp((centerPoint - e.pageX + pageSize) / pageSize * -90, -180, 0 ), i, j;
         for ( i = 0, j = prefixes.length; i < j; i++) {
           page.style[prefixes[i] + 'Transform'] = `rotateY(${angle}deg)`
-          dino.style[prefixes[i] + 'Transform'] = `rotate3d(${angle}deg)`
+          dino.style[prefixes[i] + 'Transform'] = `rotateX(${angle}deg)`
           shadow.style[prefixes[i] + 'Transform'] = `translateZ(1px) skewX(${angle / 8}deg)`
         }
 
