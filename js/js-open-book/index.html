@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      vertical-align: baseline;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      height: 100%;
+      overflow: hidden;
+      color: #ffffff;
+      perspective: 1000;
+      -webkit-perspective: 1000;
+      -moz-perspective: 1000;
+      -ms-perspective: 1000;
+      -o-perspective: 1000;
+      background-color: #444;
+      background-image: -webkit-linear-gradient(top, #444444, #999999);
+    }
+
+    .book {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -150px;
+      -webkit-transform: rotateX(80deg);
+      transform: rotateX(80deg);
+      user-select: none;
+    }
+
+    .page {
+      width: 300px;
+      height: 300px;
+      padding: 1em;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-indent: 2em;  /* 首行缩进  */
+      overflow: hidden;
+    }
+
+    .front {
+      background-color: #de362d;
+    }
+
+    .back {
+      background: #fff;
+    }
+
+    .front-cover {
+      cursor: move;
+      transform: rotateY(-180deg);
+      transform-origin: 0 50%;
+    }
+
+    .front-cover .back {
+      background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2396752846,3333985934&fm=26&gp=0.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      transform: translateZ(3px);
+      
+    }
+
+    .book-cover .back {
+      transform: translateZ(-3px);
+    }
+
+    .p3d {
+      transform-style: preserve-3d ;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+    }
+
+    .flip {
+      transform: rotateY(180deg);
+    }
+
+    .shadow {
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .dino {
+      width: 196px;
+      height: 132px;
+      position: absolute;
+      left: 60px;
+      top: 60px;
+      transform-origin: 0 100%;
+      background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3029681416,788922299&fm=26&gp=0.jpg);
+      background-size: cover;
+      transform: rotate3d(0deg);
+    }
+
+    
+
+
+  </style>
+</head>
+
+<body>
+  <div class="book p3d">
+    <div class="book-cover p3d">
+      <div class="page back flip"></div>
+      <div class="page front p3d">
+        <div class="shadow"></div>
+        <div class="dino"></div>
+      </div>
+    </div>
+    <div class="front-cover p3d">
+      <div class="page front flip p3d">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nisl quis nulla eleifend dignissim. Curabitur varius lobortis tincidunt. Maecenas gravida, nulla quis luctus imperdiet, ipsum nibh consecteturante, in sodales massa tortor eget neque. Donec porta ligula massa, id sagittis est. Ut nisl tellus, faucibusnec feugiat ut, laoreet iaculis felis. Suspendisse ultrices mauris vel tellus suscipit commodo. Integer vitaetortor erat. Pellentesque non tempor nisi.
+        </p>
+      </div>
+      <div class="page back"></div>
+    </div>
+  </div>
+
+  <script>
+    (function(window, document) {
+      let prefixes = ['webkit', 'moz', 'ms', 'o'],
+          book = document.querySelectorAll('.book')[0],
+          page = document.querySelectorAll('.front-cover')[0],
+          dino = document.querySelectorAll('.dino')[0],
+          shadow = document.querySelectorAll('.shadow')[0],
+          centerPoint = window.innerWidth / 2,
+          hold = false,
+          clamp = function(val, min, max) {
+            return Math.max(min, Math.min(val, max))
+          },
+          pageSize = 300;
+
+      page.onmousedown = function() {  //按下鼠标执行的事件
+        console.log('mousedown');
+        hold = true
+      }
+
+      window.onmouseup = function() {  //放开鼠标执行的事件
+        console.log('mouseup');
+        if (hold) {
+          hold = false
+        }
+      }
+
+      // 鼠标移动的时候执行的事件
+      window.onmousemove = function(e) {
+        if (!hold) {
+          return
+        }
+        console.log(e.pageX);
+        let angle = clamp((centerPoint - e.pageX + pageSize) / pageSize * -90, -180, 0 ), i, j;
+        for ( i = 0, j = prefixes.length; i < j; i++) {
+          page.style[prefixes[i] + 'Transform'] = `rotateY(${angle}deg)`
+          dino.style[prefixes[i] + 'Transform'] = `rotate3d(${angle}deg)`
+          shadow.style[prefixes[i] + 'Transform'] = `translateZ(1px) skewX(${angle / 8}deg)`
+        }
+
+      }
+
+
+
+    })(window, document)
+  </script>
+</body>
+
+</html>
