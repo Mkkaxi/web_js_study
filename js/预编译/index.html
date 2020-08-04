@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // console.log(b);
+    // var b = 123        变量  声明提升
+
+
+    // text()
+
+    // function text() {        // 函数声明整体提升
+    //   console.log('hello');
+    // }
+
+
+
+    function a(a) {
+      
+    }
+
+  </script>
+
+  <script>
+    // AO: {
+    //   a: undefined, 1
+    //   b: undefined, 2
+    //   c: undefined, 0
+
+    // }
+
+    // function test(a, b) {
+    //   console.log(a);  // 1
+    //   c = 0
+    //   var c
+    //   a = 3 
+    //   b = 2
+    //   console.log(b);  // 2
+    //   function b() {}
+    //   function d() {}
+    //   console.log(b);  // 2
+      
+    // }
+    // test(1)
+  </script>
+
+  <script>
+
+    // GO: {
+    //   global: undefined, 100
+    //   fn: function fn() {
+    //   console.log(global);
+    // }
+    // }
+
+    // var global = 100 
+    // function fn() {
+    //   console.log(global);
+    // }
+    // AO: { }
+
+    // fn()
+
+
+    // GO: {
+    //   fn: function() {},
+    //   global: undefined, 100
+    // }
+
+    global = 100 
+
+    function fn() {
+      console.log(global); // 100
+      global = 200
+      console.log(global); //200
+      var global = 300
+    }
+    fn()
+
+    // AO: {
+    //   global: undefined, 200 
+    // }
+
+    var global
+
+  </script>
+</body>
+</html>
