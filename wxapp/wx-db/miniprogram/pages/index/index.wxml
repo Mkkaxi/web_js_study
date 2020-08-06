@@ -1,0 +1,11 @@
+<block wx:for="{{products}}" wx:key="index">
+  <van-card 
+  num="2"
+  price="{{item.view}}"
+  desc="{{item.color}}"
+  title="{{item.title}}"
+  thumb="{{item.image}}"
+  data-id="{{item._id}}"
+  bindtap="gotoDetail"
+  />
+</block>
