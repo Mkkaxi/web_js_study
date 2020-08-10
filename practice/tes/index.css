@@ -1,0 +1,465 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+.layout {
+  width: 1140px;
+  /*height: 800px;*/
+  /*border: 1px dotted red;*/
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.middle::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+header {
+  min-width: 1140px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  /*height: 800px;*/
+}
+
+header .layout {}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav {
+  width: 100%;
+  margin: 0 auto;
+  /*height: 100px;*/
+  position: fixed;
+  z-index: 100;
+  background: #000;
+  padding: 10px;
+}
+
+.navbar {
+  width: 1140px;
+  margin: 0 auto;
+  /*background: #000;*/
+}
+
+.nav li {
+  display: block;
+  color: #fff;
+  float: right;
+  height: 20px;
+  padding: 15px;
+  font-size: 14px;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.nav #logo {
+  float: left;
+  height: 20px;
+  padding: 15px;
+  font-size: 28px;
+  color: #fec503;
+  margin-left: 15px;
+  line-height: 20px;
+  /*padding-bottom: 15px;*/
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+header .layout {
+  padding-top: 300px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+header h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  font-style: italic;
+  line-height: 40px;
+  margin-bottom: 25px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 75px;
+  line-height: 75px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header .button {
+  /*width: 200px;
+  height: 80px;*/
+  display: inline-block;
+  padding: 20px 40px;
+  background: #fed136;
+  border: 1px solid #fed136;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+header .button:hover {
+  background: #fec503;
+}
+
+main h1 {
+  text-align: center;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+main p,
+main .subtitle {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 75px;
+  color: #777;
+}
+
+main .subtitle {
+  font-style: italic;
+}
+
+.ser,
+.port,
+.about,
+.team {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.ser .detail {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ser .tb {
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
+
+.yellow-circle {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  background: #fed136;
+  border-radius: 50%;
+}
+
+
+/*.ser .tb img {
+  width: 100px;
+  height: 100px;
+  background-color: #fed136;
+  border-radius: 50%;
+}*/
+
+
+/*.port ul, .port li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}*/
+
+.port,
+.team {
+  background: #f7f7f7;
+}
+
+.port li {
+  width: 350px;
+  /*border: 1px solid red;*/
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/*.port ul {
+  position: relative;
+  left: 25px;
+}*/
+
+.port .img-1 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons-free.png);
+  background-size: cover;
+}
+
+.port .img-2 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/startup-framework-preview.png);
+  background-size: cover;
+}
+
+.port .img-3 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/treehouse-preview.png);
+  background-size: cover;
+}
+
+.port .img-4 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/golden-preview.png);
+  background-size: cover;
+}
+
+.port .img-5 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/escape-preview.png);
+  background-size: cover;
+}
+
+.port .img-6 {
+  height: 250px;
+  background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/dreams-preview.png);
+  background-size: cover;
+}
+
+.port a:hover .img-1,
+.port a:hover .img-2,
+.port a:hover .img-3,
+.port a:hover .img-4,
+.port a:hover .img-5,
+.port a:hover .img-6 {
+  opacity: 0.65;
+}
+
+.about li {
+  /*border: 1px solid red;*/
+  text-align: center;
+  position: relative;
+  padding-bottom: 125px;
+  z-index: -1;
+}
+
+.about li:last-child {
+  padding-bottom: 0;
+}
+
+.about li::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 2px solid #f1f1f1;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  margin-left: -1px;
+  z-index: -2;
+}
+
+.about img {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  border: 7px solid #f1f1f1;
+}
+
+.about li .time {
+  position: absolute;
+  width: 20em;
+  top: 0;
+  right: 50%;
+  margin-right: 100px;
+  text-align: right;
+}
+
+.about li:nth-child(2n) .time {
+  position: absolute;
+  width: 20em;
+  top: 0;
+  left: 50%;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.about li span {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 75px;
+  color: #777;
+}
+
+.about li h4 {
+  margin: 0 0 10px 0;
+}
+
+.about li .time-cirle {
+  display: inline-block;
+  width: 156px;
+  height: 156px;
+  background: #fed136;
+  border: 7px solid #f1f1f1;
+  border-radius: 50%;
+}
+
+.about li .time-cirle h4 {
+  color: #fff;
+  padding-top: 40px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.team ul,
+.team li {
+  list-style: none;
+  margin: 50px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.team li {
+  display: inline-block;
+  width: 300px;
+  /*border: 1px solid red;*/
+}
+
+.team img:nth-child(1) {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+}
+
+.black-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  background: #222;
+  border-radius: 50%;
+}
+
+.team li p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.team li h2 {
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+footer .logo {
+  text-align: center;
+  padding: 30px;
+}
+
+footer .logo img {
+  width: 200px;
+}
+
+footer .info {
+  text-align: center;
+  min-width: 1140px;
+  height: 500px;
+  padding: 100px 0;
+  color: #fff;
+  background-color: #222;
+  background-image: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/map-image.png)
+}
+
+form {
+  text-align: center;
+}
+
+.you-1 {
+  box-sizing: border-box;
+  width: 50%;
+  height: 261px;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.you-2 {
+  box-sizing: border-box;
+  width: 50%;
+  height: 261px;
+  float: left;
+  padding: 0 15px 25px 15px;
+}
+
+.you-1 input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  height: 62px;
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.you-2 textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 1.15rem;
+  font-family: arial;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.info button {
+  width: 200px;
+  height: 80px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #fec503;
+  border-color: #fec501;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.tail {
+  padding: 10px;
+  text-align: center;
+  background: #f7f7f7;
+}
+
+.tail-1,
+.tail-2,
+.tail-3 {
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+  vertical-align: middle;
+}
