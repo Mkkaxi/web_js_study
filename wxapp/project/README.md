@@ -14,7 +14,7 @@
         rate   0-5 
         title  
       
-      project
+      项目表：project
         title
         desc
         photos
@@ -37,3 +37,16 @@
   7：00 - 10：00
   - list
   拍照加计时
+
+
+
+  核心表
+    Student
+      title  salary  total_salary  start_ts  rate  school  (薪人薪事)
+    Owner
+    Project
+      图片 + 描述
+    Comment
+    Record
+    Order
+
