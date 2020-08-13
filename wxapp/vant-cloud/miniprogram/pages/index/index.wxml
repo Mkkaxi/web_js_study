@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="new-outer">
+    <view class="new-item">
+      <image src="https://677a-gzhiyi-154dd4-1256703754.tcb.qcloud.la/index-group.png?sign=464daa4bfd906e1a9b5bedf039bc7118&t=1545558867" />
+      <view class="right-conner">
+        <view class="item-name">新建群组</view>
+        <view class="icon-arrow">
+          <van-icon name="arrow" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
