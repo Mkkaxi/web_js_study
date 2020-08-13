@@ -1,1 +1,38 @@
 /* miniprogram/pages/index/index.wxss */
+
+.new-item {
+  width: 80%;
+  height: 200rpx;
+  margin: 40rpx auto;
+  padding: 20rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 7px 20px #ececec;
+  border-radius: 30rpx;
+}
+
+.new-item image {
+  width: 124rpx;
+  height: 124rpx;
+}
+
+.right-conner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-conner .item-name {
+  margin-right: 14rpx;
+}
+
+.icon-arrow {
+  text-align: right;
+  margin-right: 13rpx;
+}
+
+.new-item:hover {
+  box-shadow: none;
+}

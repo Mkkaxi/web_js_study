@@ -1,6 +1,6 @@
 <view class="container">
   <view class="new-outer">
-    <view class="new-item">
+    <view class="new-item" bindtap="showNewGroupModal">
       <image src="https://677a-gzhiyi-154dd4-1256703754.tcb.qcloud.la/index-group.png?sign=464daa4bfd906e1a9b5bedf039bc7118&t=1545558867" />
       <view class="right-conner">
         <view class="item-name">新建群组</view>
@@ -11,3 +11,25 @@
     </view>
   </view>
 </view>
+
+<van-dialog 
+  asyncClose
+  showCancelButton
+  use-slot
+  id="van-dialog" 
+  title="创建一个群组"
+  show="{{newGroupModal}}"
+
+>
+  <view class="group-dialog-body">
+    <van-cell-group>
+      <van-field
+        label="群组名"
+        value="{{ groupName }}"
+        placeholder="起个名字吧"
+        border="{{ false }}"
+        bind:change="onGroupNameChange"
+      />
+    </van-cell-group>
+  </view>
+</van-dialog>
