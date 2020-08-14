@@ -1,2 +1,19 @@
 <!--pages/group/group.wxml-->
-<text>pages/group/group.wxml</text>
+<view class="group-body">
+  <view class="public-list">
+    <div class="public-header">
+      <view class="public-icon">
+        <van-icon name="https://677a-gzhiyi-154dd4-1256703754.tcb.qcloud.la/group3.png?sign=1119403c4109bbb505d07aa6d42ffdff&t=1545558495" />
+      </view>
+      我的群组
+    </div>
+    <!-- 列表 -->
+    <view class="public-item" wx:for="{{groupList}}" wx:key="index">
+      <view class="public-item-name"></view>
+      <view>
+        <image src="" class="creater"></image>
+        <van-icon name="arrow" style="color: #c6c6c6;" />
+      </view>
+    </view>
+  </view>
+</view>

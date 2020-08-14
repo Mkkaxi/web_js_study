@@ -16,11 +16,14 @@
   asyncClose
   showCancelButton
   use-slot
-  id="van-dialog" 
+  id="new-group-modal" 
   title="创建一个群组"
   show="{{newGroupModal}}"
-
+  bind:cancel="closeDialog"
+  bind:confirm="createGroup"
+  zIndex="0"
 >
+
   <view class="group-dialog-body">
     <van-cell-group>
       <van-field
@@ -33,3 +36,6 @@
     </van-cell-group>
   </view>
 </van-dialog>
+
+<!-- 提示 -->
+<van-notify id="notify-selector" />
