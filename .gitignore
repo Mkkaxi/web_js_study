@@ -2,6 +2,7 @@
 *.class
 
 node_modules/
+
 miniprogram_npm/
 
 # Log file
