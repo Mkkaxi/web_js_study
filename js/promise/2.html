@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getSong(call) {
+      $.ajax({
+        url: 'http://neteasecloudmusicapi.zhaoboy.com/top/list?idx=1',
+        dataType: 'JSON',
+        success: function(res) {
+          console.log(res);
+          call()
+        }
+      })
+    }
+
+    
+
+    function singSong() {
+      console.log('sing...');
+    }
+
+    getSong(singSong)
+  </script>
+</body>
+</html>
