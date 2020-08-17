@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- <script>
+    // let app = document.getElementById('app')
+    // let app = $('#app')
+    // console.log(app);
+    $.ajax({
+      url: 'http://neteasecloudmusicapi.zhaoboy.com/top/list',
+      data: {
+        idx: 1
+      },
+      dataType: 'JSON',
+      method: 'Get',
+      success: (res) => {
+        console.log(res);
+      }
+
+    })
+  </script> -->
+
+  <!-- <script>
+    // 原生js做接口请求  XMLHttpRequest()
+    var myAjax = new XMLHttpRequest()  //  创建异步对象
+    // 设置请求的url和参数
+    myAjax.open('get', 'http://neteasecloudmusicapi.zhaoboy.com/top/list?idx=1', true)
+    myAjax.send()
+    myAjax.onreadystatechange = function(res) {
+      if(myAjax.readyState == 4 && myAjax.status == 200) {
+        // console.log(myAjax.responseText);
+        console.log(JSON.parse(myAjax.responseText));
+      }
+    }
+  </script> -->
+
+  <!-- <script>
+    var xhr = new XMLHttpRequest()
+    xhr.open('post', 'http://neteasecloudmusicapi.zhaoboy.com/top/list', true)
+    xhr.setRequestHeader('content-type', 'application/x-ww-form-urlencoded')  // post 请求一定要设置请求头
+    xhr.send('idx=1')
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+      }
+    }
+  </script> -->
+
+  <script>
+    function request(method, url, data, success) {
+      var ajax = new XMLHttpRequest()
+      if (method == 'get' || method == 'GET') {
+        // get 请求
+        if (data) {
+          url += '?'
+          url += data
+        } else {
+
+        }
+        ajax.open(method, url)
+        ajax.send()
+
+      } else {
+        // post请求
+        ajax.open(method, url)
+        xhr.setRequestHeader('content-type', 'application/x-ww-form-urlencoded')  // post 请求一定要设置请求头
+        if (data) {
+          ajax.send(data)
+        } else {
+          ajax.send()
+        }
+
+        ajax.onreadystatechange = function() {
+          if (ajax.readyState == 4 && ajax.status == 200) {
+            success(ajax.responseText)
+          }
+        }
+
+        
+      }
+
+
+    }
+
+    request('get', 'http://neteasecloudmusicapi.zhaoboy.com/top/list', 'idx=1', success)
+    function success(res) {
+      console.log(res);
+    }
+  </script>
+
+</body>
+</html>
