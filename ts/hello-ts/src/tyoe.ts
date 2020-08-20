@@ -37,3 +37,8 @@ const list1: Array<number> = [1, 2, 3]  // 泛型
 
 // 元组
 const list2: (string | number)[] = ['1', 2]
+
+// 对象
+let obj: object
+obj = [1]
+obj = {}
