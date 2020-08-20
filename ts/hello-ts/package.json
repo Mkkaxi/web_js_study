@@ -1,7 +1,7 @@
 {
-  "name": "src",
+  "name": "hello-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. 安装 ts\r 2. tsc --init\r 3. 编辑 tsconfig.json",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

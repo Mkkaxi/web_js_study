@@ -34,3 +34,8 @@ let symbol2: symbol = Symbol('key')
 
 
 // BigInt
+
+const max = BigInt(Number.MAX_SAFE_INTEGER)
+
+const max1 = max + 1 
+const max2 = max1 + 2
