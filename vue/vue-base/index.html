@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <div v-if="isSure">ggg</div>
+    <div v-else>hhh</div>
+    <div class="item" v-for="item in people" :key="index">
+      <p>{{item.name}}:{{item.age}}</p>
+    </div> -->
+    <!-- <div class="msg">
+      <span>{{message}}</span><br/>
+      <span v-text="message"></span><br/>
+      <span v-html="newMessage"></span>
+    </div> -->
+
+    <div class="count">
+      <p>{{count}}</p>
+      <button v-on:click="add()">+</button>
+      <button @click="count--">-</button>
+    </div>
+
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+        newMessage: '<h2>hello vue</h2>',
+        isSure: false,
+        list: ['a', 'b', 'c', 'd'],
+        people: [
+          { name: 'xx', age: 18},
+          { name: 'hn', age: 19},
+          { name: 'yl', age: 20}
+        ],
+        count: 0
+      },
+
+      methods: {
+        add() {
+          console.log('add');
+          this.count++
+        }
+
+      },
+
+      beforeCreate() {
+        console.log('beforeCreate');
+      },
+      created() {
+        console.log('created');
+      },
+      beforeMount() {
+        console.log(this.$el);
+      },
+      mounted() {
+        console.log(this.$el);
+      },
+      beforeUpdate() {
+
+      },
+      update() {
+
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy');
+      },
+      destroyed() {
+        console.log('destroyed');
+      }
+    }) 
+
+
+  </script>
+</body>
+</html>

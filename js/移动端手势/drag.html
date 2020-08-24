@@ -1,0 +1,43 @@
+<style>
+  .box {
+    width: 100vw;
+    height: 50vh;
+    background-color: red;
+  }
+</style>
+<div class="box"></div>
+<script>
+  const box = document.querySelector('.box')
+  box.addEventListener('mousedown', (e) => {
+    let time = setTimeout(() => {
+      console.log('hh');
+    }, 500)
+    
+    let startX = e.clientX, startY = e.clientY
+    function handleMove(event) {
+      let endX = event.clientX, endY = event.clientY
+      let diffX = endX - startX, diffY = endY - startY
+      // 移动了 10 px
+      if (diffX ** 2 + diffY ** 2 > 10000) {
+        console.log('hhh');
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          console.log('xzhou');
+          if (diffX > 0) {
+            console.log('right');
+          } else {
+            console.log('left');
+          }
+        }
+      }
+      // box.style.transform =
+      //   `translate3d(${event.clientX}px, ${event.clientY}px, 0)`
+    }
+    document.addEventListener('mousemove', handleMove)
+    function handleUp() {
+      clearTimeout(time)
+      document.removeEventListener('mousemove', handleMove)
+      document.removeEventListener('mouseup', handleUp)
+    }
+    document.addEventListener('mouseup', handleUp)
+  })
+</script>
