@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
   <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    [v-cloak]{
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
   <div id="app">
     <!-- <div v-if="isSure">ggg</div>
@@ -19,11 +29,32 @@
       <span v-html="newMessage"></span>
     </div> -->
 
-    <div class="count">
+    <!-- <div class="count">
       <p>{{count}}</p>
       <button v-on:click="add()">+</button>
       <button @click="count--">-</button>
-    </div>
+    </div> -->
+
+    <!-- <div class="model">
+      <p>{{message}}</p>
+      <p>
+        v-model:
+        <input type="text" v-model="message">
+      </p>
+    </div> -->
+
+    <!-- <div class="pic">
+      <img :src="imgUrl" alt="">
+    </div> -->
+
+    <!-- <div v-bind:class="{red: isRed}" :class="[className1, className2]"  @click="changeColor()">xg</div> -->
+
+    <!-- <div v-pre>{{message}}</div> -->
+
+    <!-- <div v-cloak>{{message}}</div> -->
+
+    <div v-once>{{message}}</div>
+    <input type="text" v-model="message">
 
   </div>
 
@@ -32,8 +63,12 @@
     var app = new Vue({
       el: '#app',
       data: {
+        className1: 'active',
+        className2: 'wrapper',
+        isRed: true,
         message: 'Hello World',
         newMessage: '<h2>hello vue</h2>',
+        imgUrl: 'https://t7.baidu.com/it/u=3616242789,1098670747&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1598856892&t=78822eacea2cab323d8f2370d5fc9257',
         isSure: false,
         list: ['a', 'b', 'c', 'd'],
         people: [
@@ -48,6 +83,9 @@
         add() {
           console.log('add');
           this.count++
+        },
+        changeColor() {
+          this.isRed = !this.isRed
         }
 
       },
@@ -65,10 +103,10 @@
         console.log(this.$el);
       },
       beforeUpdate() {
-
+        console.log('beforeUpdate');
       },
       update() {
-
+        console.log('update');
       },
       beforeDestroy() {
         console.log('beforeDestroy');
