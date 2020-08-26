@@ -7,30 +7,18 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>component</h1>
   <div id="app">
-    <p>{{count}}</p>
-    <button @click="add">+</button>
+    <wn></wn>
   </div>
 
   <script>
-    var outData = {
-      count: 1,
-      name: 'wn'
-    }
-
-    function adds() {
-      // this.count++
-      Vue.set(outData, 'count', 3)
-    }
-
+    Vue.component('wn', {
+      template: `<div style="font-size: 20px">我是一个组件</div>`
+    })
     let app = new Vue({
       el: '#app',
-      data: outData,
-      methods: {
-        add() {
-          adds()
-        }
-      }
+      data: {}
     })
   </script>
 </body>
