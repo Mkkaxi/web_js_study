@@ -1,5 +1,7 @@
 <template>
-  <div class="hi">我是Hi1页面</div>
+  <div class="hi">我是Hi1页面
+    {{$route.params.name}}
+  </div>
 </template>
 
 <script>
