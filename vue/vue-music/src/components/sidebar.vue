@@ -9,7 +9,7 @@
       </div>
       <div class="menu">
         <ul>
-          <li>
+          <li @click="showToast">
             <router-link to="/user">
               <i class="iconfont icon-user"></i>
               <span>个人中心</span>
@@ -46,7 +46,7 @@ export default {
       this.$store.dispatch('setShowSidebar', false)
     },
     showToast() {
-      
+      this.$toast('该功能暂未开放...')
     }
   }
 }

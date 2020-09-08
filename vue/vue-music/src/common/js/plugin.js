@@ -15,7 +15,7 @@ Toast.install = function(Vue, options) {
     }
 
     let toastTpl = Vue.extend({
-      template: '<div class="vue-toast toast- '+ opt.defaultType +'">'+ tips +'</div>'
+      template: '<div class="vue-toast toast-'+ opt.defaultType +'">'+ tips +'</div>'
     })
 
     let tpl = new toastTpl().$mount().$el
@@ -32,4 +32,8 @@ Toast.install = function(Vue, options) {
       return Vue.prototype.$toast(tips, type)
     }
   })
+}
+
+export {
+  Toast
 }
