@@ -74,6 +74,12 @@ export default {
     }
   },
 
+  mounted() {
+    this.$nextTick(() => { // 一定会在模板编译完才执行
+      this._initScroll()
+    })
+  },
+
   methods: {
       _initScroll() {
       if (!this.$$refs.wrapper) {
@@ -85,7 +91,7 @@ export default {
         probeType: this.probeType,
         eventPassthrough: this.direction === DIRECTION_V ? DIRECTION_H : DIRECTION_V
       })
-      
+
        // 是否派发滚动事件
       if (this.listenScroll) {
         this.scroll.on('scroll', (pos) => {
@@ -119,7 +125,39 @@ export default {
         })
       }
 
+      
+      
 
+    },
+
+    disable() {
+      // 代理better-scroll的disable方法
+      this.scroll && this.scroll.disable()
+    },
+    enable() {
+      // 代理better-scroll的enable方法
+      this.scroll && this.scroll.enable()
+    },
+    refresh() {
+      // 代理better-scroll的refresh方法
+      this.scroll && this.scroll.refresh()
+    },
+    scrollTo() {
+      // 代理better-scroll的scrollTo方法
+      this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
+    },
+    scrollToElement() {
+      // 代理better-scroll的scrollToElement方法
+      this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
+    },
+
+  },
+  
+  watch: {
+    data() {
+      setTimeout(() => {
+        this.refresh()
+      }, this.refreshDelay)
     }
   }
 } 
