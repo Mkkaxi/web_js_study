@@ -73,19 +73,16 @@ export default {
       default: DIRECTION_V
     }
   },
-
   mounted() {
-    this.$nextTick(() => { // 一定会在模板编译完才执行
+    this.$nextTick(() => { // 一定会在模版编译完成之后执行
       this._initScroll()
     })
   },
-
   methods: {
-      _initScroll() {
-      if (!this.$$refs.wrapper) {
+    _initScroll() {
+      if (!this.$refs.wrapper) {
         return
       }
-
       this.scroll = new BScroll(this.$refs.wrapper, {
         click: this.click,
         probeType: this.probeType,
@@ -124,12 +121,7 @@ export default {
           this.$emit('beforeScroll')
         })
       }
-
-      
-      
-
     },
-
     disable() {
       // 代理better-scroll的disable方法
       this.scroll && this.scroll.disable()
@@ -149,10 +141,8 @@ export default {
     scrollToElement() {
       // 代理better-scroll的scrollToElement方法
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
-    },
-
+    }
   },
-  
   watch: {
     data() {
       setTimeout(() => {
@@ -160,7 +150,7 @@ export default {
       }, this.refreshDelay)
     }
   }
-} 
+}
 </script>
 
 <style>

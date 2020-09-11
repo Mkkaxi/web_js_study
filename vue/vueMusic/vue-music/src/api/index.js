@@ -6,7 +6,7 @@ const vue = new Vue()
 // axios 配置
 
 axios.defaults.timeout = 10000
-axios.defaults.baseUrl = 'http://localhost:3000'
+axios.defaults.baseURL = 'http://localhost:3000'
 
 // 返回状态判断 （响应拦截）
 axios.interceptors.response.use(
@@ -15,7 +15,7 @@ axios.interceptors.response.use(
       vue.$toast('网络异常')
       return Promise.reject(res)
     }
-    return res
+    return res.data
   },
   (error) => {
     vue.$toast('服务器异常')
@@ -48,7 +48,12 @@ export default {
   Login(params) {
     return fetchGet('/login', params)
   },
+  // 热门搜索
   HotSearchKey() {
     return fetchGet('/search/hot')
+  },
+  // music搜索
+  MusicSearch(params) {
+    return fetchGet('/search', params)
   }
 }
