@@ -69,16 +69,18 @@ export default {
     }
   },
   methods: {
-    saveSearch() {
+    saveSearch(song) {
       // 保存历史记录
       this.saveSearchHistory(this.query)
+      // 播放音乐
+      this.selectPlaySong(song)
     },
     _getHotKey () {  // 获取热门搜索
       api.HotSearchKey().then((res) => {
         this.hotKet = res.result.hots.slice(0, 10)
       })
     },
-    ...mapActions(['deleteSearchHistory', 'clearSearchHistory','saveSearchHistory'])
+    ...mapActions(['deleteSearchHistory', 'clearSearchHistory', 'saveSearchHistory', 'selectPlaySong'])
   },
   created() {
     this._getHotKey()

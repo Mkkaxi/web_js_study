@@ -48,6 +48,7 @@ export default {
         this.hasMore = false
       }
     },
+
     searchMore() {
       if (!this.hasMore) {
         return
@@ -55,6 +56,7 @@ export default {
       this.page++
       this.fetchResult(this.page)
     },
+
     fetchResult(page) {
       const params = {
         limit,
@@ -69,6 +71,7 @@ export default {
         
       })
     },
+
     search() {
       this.page = 1
       this.hasMore = true
@@ -76,10 +79,12 @@ export default {
       this.result = []
       this.fetchResult(this.page)
     },
+
     getDisplayName(item) {
       return `${item.name} - ${item.artists[0] && item.artists[0].name}`
     }
   },
+  
   watch: {
     query(newQuery) {
       if (!newQuery) {
