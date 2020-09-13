@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input id="input" type="text">
+    <span id="span"></span>
+  </div>
+
+  <script>
+    const data = {
+      text: 'hello world'
+    }
+
+    const input = document.getElementById('input')
+    const span = document.getElementById('span')
+
+    // 数据劫持  defineProperty只能监听对象
+    Object.defineProperty(data, 'text', {
+      get () {
+        console.log('h');
+      },
+      set (newVal) {
+        console.log('set');
+        input.value = newVal
+        span.innerHTML = newVal
+      }
+    })
+
+    input.addEventListener('keyup', function(e) {
+      console.log(e);
+      data.text = e.target.value
+    })
+  </script>
+</body>
+</html>
