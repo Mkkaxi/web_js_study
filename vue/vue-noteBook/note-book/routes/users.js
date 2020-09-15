@@ -1,5 +1,3 @@
-const config = require('../controllers/defaultConfig')
-
 const router = require('koa-router')()
 const UserService = require('../controllers/mySqlConfig')
 
@@ -20,7 +18,7 @@ router.get('/all', async(ctx, next) => {
 })
 
 // 登录注册
-router.post('./userRegister', async(ctx, next) => {
+router.post('/userRegister', async(ctx, next) => {
   var _username = ctx.request.body.username
   var _userpwd = ctx.request.body.userpwd
   var _nickname = ctx.request.body.nickname
@@ -36,7 +34,7 @@ router.post('./userRegister', async(ctx, next) => {
     userpwd: _userpwd,
     nickname: _nickname
   }
-  await UserService.findUser(user.username).then(async() => {
+  await UserService.findUser(user.username).then(async(res) => {
     if (res.length) {
       try {
         throw Error('用户名已存在')
@@ -52,7 +50,35 @@ router.post('./userRegister', async(ctx, next) => {
       await UserService.insertUser([user.username, user.userpwd, user.nickname])
       .then((res) => {
         console.log(res);
+        let r = ''
+        if (res.affectedRows !== 0) {
+          r = 'ok'
+          ctx.body = {
+            code: '80000',
+            data: r,
+            mess: '注册成功'
+          }
+        } else {
+          r = 'error'
+          ctx.body = {
+            code: '80004',
+            data: r,
+            mess: '注册失败'
+          }
+        }
       })
+      .catch((err) => {
+        ctx.body = {
+          code: '80002',
+          data: err
+        }
+      })
+    }
+  })
+  .catch((err) => {
+    ctx.body = {
+      code: '80002',
+      data: err
     }
   })
 })

@@ -47,11 +47,19 @@ export default {
       }
       this.$http({
         method: 'post',
-        url: this.$util.baseUrl+'/users/userRegister',
+        url: this.$util.baseUrl + '/users/userRegister',
         data: {
           nickname: this.nickname.trim(),
           username: this.username.trim(),
           userpwd: this.userpwd.trim()
+        }
+      }).then((res) => {
+        console.log(res);
+        if (res.data.code === '80000') {
+          this.$toast(res.data.mess)
+          this.login()
+        } else {
+          this.$toast(res.data.mess)
         }
       })
     },
