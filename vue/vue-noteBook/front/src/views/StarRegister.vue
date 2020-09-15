@@ -33,6 +33,27 @@ export default {
   },
   methods: {
     register(){
+      if (this.nickname.trim() == '' || this.nickname.trim() == null) {
+        this.$toast('请输入昵称')
+        return
+      }
+      if (this.username.trim() == '' || this.username.trim() == null) {
+        this.$toast('请输入账号')
+        return
+      }
+      if (this.userpwd.trim() == '' || this.userpwd.trim() == null) {
+        this.$toast('请输入密码')
+        return
+      }
+      this.$http({
+        method: 'post',
+        url: this.$util.baseUrl+'/users/userRegister',
+        data: {
+          nickname: this.nickname.trim(),
+          username: this.username.trim(),
+          userpwd: this.userpwd.trim()
+        }
+      })
     },
     login() {
       this.$router.push({path:"/StarLogin"});
@@ -67,7 +88,6 @@ input {
   .login-wraper {
     width: 7.44rem;
     height: 11.413333rem;
-    // margin-top: 1.706667rem;
     border-radius: 0.266667rem;
     box-shadow: 0 0 0.533333rem 0 rgba(170, 170, 170, 1);
     border: 1px solid rgba(187, 187, 187, 1);
