@@ -1,5 +1,6 @@
 const router = require('koa-router')()
 const UserService = require('../controllers/mySqlConfig')
+const utils = require('../controllers/utils')
 
 router.prefix('/users')
 
@@ -49,7 +50,6 @@ router.post('/userRegister', async(ctx, next) => {
     } else {
       await UserService.insertUser([user.username, user.userpwd, user.nickname])
       .then((res) => {
-        console.log(res);
         let r = ''
         if (res.affectedRows !== 0) {
           r = 'ok'
@@ -168,6 +168,41 @@ router.post('/findNoteDetailById', async(ctx, next) => {
         code: '80004',
         data: r,
         mess: '查询失败'
+      }
+    }
+  }).catch((err) => {
+    ctx.body = {
+      code: '80002',
+      data: err
+    }
+  })
+})
+
+router.post('/insertNote', async(ctx, next) => {
+  let c_time = utils.getNowFormatDate()
+  let m_time = utils.getNowFormatDate()
+  let note_content = ctx.request.body.note_content
+  let head_img = ctx.request.body.head_img
+  let title = ctx.request.body.title
+  let note_type = ctx.request.body.note_type
+  let useId = ctx.request.body.userId
+  let nickname = ctx.request.body.nickname
+  await UserService.insertNote([c_time, m_time, note_content, head_img, title, note_type, useId, nickname]).then(async(res) => {
+    
+    let r = ''
+    if (res.affectedRows !== 0) {
+      r = 'ok'
+      ctx.body = {
+        code: '80000',
+        data: r,
+        mess: '发表成功'
+      }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '80004',
+        data: r,
+        mess: '发表失败'
       }
     }
   }).catch((err) => {

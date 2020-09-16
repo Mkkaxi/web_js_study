@@ -68,6 +68,12 @@ let findNoteDetailById = function(id) {
   return allServices.query(_sql)
 }
 
+// 发表笔记
+let insertNote = function(options) {
+  let _sql = `insert into note set c_time=?,m_time=?,note_content=?,head_img=?,title=?,note_type=?,useId=?,nickname=?;`
+  return allServices.query(_sql, options)
+}
+
 // 导出方法
 module.exports = {
   getAllUsers,
@@ -75,5 +81,6 @@ module.exports = {
   findUser,
   insertUser,
   findNoteListByType,
-  findNoteDetailById
+  findNoteDetailById,
+  insertNote
 }

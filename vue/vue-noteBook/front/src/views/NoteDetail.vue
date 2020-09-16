@@ -37,7 +37,6 @@ export default {
       }).then((res) => {
         if (res.data.code === '80000') {
           this.detailData = res.data.data
-          console.log(this.detailData);
         } else {
           this.$toast(res.data.mess)
         }

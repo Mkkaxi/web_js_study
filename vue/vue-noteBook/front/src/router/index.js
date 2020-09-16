@@ -59,6 +59,14 @@ const routes = [
     meta: {
       title: '笔记详情'
     }
+  },
+  {
+    path: '/AddNote',
+    name: 'AddNote',
+    component: () => import('@/views/AddNote.vue'),
+    meta: {
+      title: '写笔记'
+    }
   }
 ]
 

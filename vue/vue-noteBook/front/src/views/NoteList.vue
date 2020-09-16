@@ -40,7 +40,6 @@ export default {
           userId
         }
       }).then((res) => {
-        console.log(res);
         if (res.data.code === '80000') {
           this.noteList = res.data.data
         } else {

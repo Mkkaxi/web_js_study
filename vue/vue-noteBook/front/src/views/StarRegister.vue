@@ -54,7 +54,6 @@ export default {
           userpwd: this.userpwd.trim()
         }
       }).then((res) => {
-        console.log(res);
         if (res.data.code === '80000') {
           this.$toast(res.data.mess)
           this.login()
