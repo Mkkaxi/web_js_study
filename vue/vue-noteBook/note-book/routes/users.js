@@ -83,4 +83,99 @@ router.post('/userRegister', async(ctx, next) => {
   })
 })
 
+router.post("/userLogin", async (ctx, next) => {
+  const _username = ctx.request.body.username;
+  const _userpwd = ctx.request.body.userpwd;
+  if (_username && _userpwd) {
+    await UserService.userLogin(_username, _userpwd).then((res) => {
+      if (res.length !== 1) {
+        try {
+          throw Error("用户密码错误");
+        } catch (err) {
+          console.log(err);
+        }
+        ctx.body = {
+          code: "80005",
+          data: "err",
+          msg: "账号密码错误",
+        };
+      } else {
+        let result = {
+          id: res[0].id,
+          nickname: res[0].nickname,
+          username: res[0].username
+        }
+        ctx.body = {
+          code: "80000",
+          r:res,
+          msg: "登录成功",
+          result
+        };
+      }
+    });
+  } else {
+    ctx.body = {
+      code: "80001",
+      msg: "用户名、密码或昵称不能为空",
+    };
+  }
+});
+
+// 根据分类名查找对应笔记列表
+router.post('/findNoteListByType', async(ctx, next) => {
+  const note_type = ctx.request.body.note_type
+  const userId = ctx.request.body.userId
+  await UserService.findNoteListByType(note_type, userId).then(async(res) => {
+    let r = ''
+    if (res.length) {
+      r = 'ok'
+      ctx.body = {
+        code: '80000',
+        data: res,
+        mess: '查找成功'
+      }
+    } else {
+      r = 'error'
+      ctx.body = {
+        code: '80004',
+        data: r,
+        mess: '查找失败'
+      }
+    }
+  }).catch((err) => {
+    ctx.body = {
+      code: '80002',
+      data: err
+    }
+  })
+})
+
+// 根据文章id查找文章详情
+router.post('/findNoteDetailById', async(ctx, next) => {
+  const id = ctx.request.body.id
+  await UserService.findNoteDetailById(id).then(async(res) => {
+    let r = ''
+    if (res.length) {
+      r = 'ok'
+      ctx.body = {
+        code: '80000',
+        data: res[0],
+        mess: '查询成功'
+      }
+    } else {
+      r = 'error',
+      ctx.body = {
+        code: '80004',
+        data: r,
+        mess: '查询失败'
+      }
+    }
+  }).catch((err) => {
+    ctx.body = {
+      code: '80002',
+      data: err
+    }
+  })
+})
+
 module.exports = router

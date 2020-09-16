@@ -39,7 +39,7 @@ let getAllUsers =function() {
 }
 
 // 用户登录
-let userLogin = function(username) {
+let userLogin = function(username, userpwd) {
   let _sql = `select * from users where username="${username}" and userpwd="${userpwd}";`
   return allServices.query(_sql)
 }
@@ -56,10 +56,24 @@ let insertUser = function(value) {
   return allServices.query(_sql, value)
 }
 
+// 根据分类名查找对应的笔记列表
+let findNoteListByType = function(note_type, userId) {
+  let _sql = `select * from note where note_type="${note_type}" and useId="${userId}"`
+  return allServices.query(_sql)
+}
+
+// 根据文章id查找文章详情
+let findNoteDetailById = function(id) {
+  let _sql = `select * from note where id="${id}"`
+  return allServices.query(_sql)
+}
+
 // 导出方法
 module.exports = {
   getAllUsers,
   userLogin,
   findUser,
-  insertUser
+  insertUser,
+  findNoteListByType,
+  findNoteDetailById
 }

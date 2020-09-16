@@ -50,9 +50,13 @@ export default {
       }).then((res) => {
         if (res.data.code === '80000') {
           // 拿到后端返回的用户信息（用户名和昵称） 存到本地
+          
+          sessionStorage.setItem('userInfo', JSON.stringify(res.data.result))
           // 跳转首页
+          this.$router.push({ path: '/noteClass' })
+          console.log(res);
         } else {
-          this.$toast(res.data.mess)
+          this.$toast(res.data.msg)
         }
       }).catch((err) => {
         console.log(err);
