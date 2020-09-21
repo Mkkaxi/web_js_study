@@ -6,6 +6,41 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <ul>
+    <li><a href="#/home">home</a></li>
+    <li><a href="#/about">about</a></li>
+
+    <!-- 渲染路由对应的 UI -->
+    <div id="routeView"></div>
+  </ul>
+
+  <script>
+    // 页面加载触发 hashchange 事件
+    window.addEventListener('DOMContentLoaded', onLoad)
+    // 监听路由的变化
+    window.addEventListener('hashchange', onHashChange)
+
+    // 路由视图
+    let routeView = null
+    function onLoad() {
+      routeView = document.querySelector('#routeView')
+      onHashChange()
+    } 
+
+    // 路由变化时，根据路由渲染对应的UI
+    function onHashChange() {
+      console.log(11);
+      switch (location.hash) {
+        case '#/home':
+          routeView.innerHTML = 'Home'
+          break;
+        case '#/about': 
+          routeView.innerHTML = 'About'
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
 </body>
 </html>
