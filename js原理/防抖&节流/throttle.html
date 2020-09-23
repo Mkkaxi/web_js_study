@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">节流</div>
+  <script>
+    // 在规定的时间内只触发一次
+    function throttle(fn, delay) {
+      // 利用闭包保存时间
+      let prev = Date.now()
+      return function() {
+        let now = Date.now()
+        if(now - prev >= delay) {
+          fn.apply(this, arguments)
+          prev = Date.now()
+        }
+      }
+    }
+
+    document.getElementById('app').addEventListener('click', throttle(fn, 1000))
+
+    function fn(a) {
+      console.log('节流', a);
+    }
+  </script>
+</body>
+</html>
