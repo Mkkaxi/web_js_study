@@ -13,10 +13,51 @@ class Store{
       }
     })
     // this.state = options.state || {}
+
+    let getters = options.getters || {}
+    this.getters = {}
+    Object.keys(getters).forEach(getterName => {
+      Object.defineProperty(this.getters, getterName, {
+        get: () => {
+          return getters[getterName](this.state)
+        }
+      })
+    })
+
+
+    // mutations
+    let mutations = options.mutations || {}
+    this.mutations = {}
+    Object.keys(mutations).forEach(mutationName => {
+      this.mutations[mutationName] = (arg) => {
+        mutations[mutationName](this.state, arg)
+      }
+    })
+
+    // actions 
+    let actions = options.actions || {}
+    this.actions = {}
+    Object.keys(actions).forEach(actionName => {
+      this.actions[actionName] = (arg) => {
+        actions[actionName](this, arg)
+      }
+    })
+
   }
+
+  commit(method, arg) {
+    this.mutations[method](arg)
+  }
+
+  dispatch(method, arg) {
+    this.actions[method](arg)
+  }
+
   get state() { // 属性自动触发
     return this.vm.state
   }
+
+  
 }
 
 let install = function() {

@@ -4,7 +4,7 @@ Vue.use = function(plugin) {
 
 class Vue {
   constructor() {
-    _installedPlugins
+    this._installedPlugins
   }
   use(plugin) {
     const installedPlugins = (this._installedPlugins || (this._installedPlugins = []))
