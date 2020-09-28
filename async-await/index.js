@@ -19,15 +19,22 @@ async function testAsync() {
 // 2. 任何一个await语句后面的Promise对象变为reject，那么整个async函数会中断
 // 3. async函数返回的是Promise对象，必须等到所有的await命令后面的Promise对象执行完才会发生状态改变
 
-const testAsync = function() {
-  return  new Promise((resolve,reject) => { 
-      function getJson() {
-      return new Promise((resolve, reject) => {
-          setTimeout(function () {
-              console.log(2)
-              resolve(2)
-          }, 2000)
-      })
-    }
+function testAsync() {
+  return Promise.resolve().then(function() {
+    return getJson()
+  }).then(function() {
+    return console.log(3);
   })
 }
+
+
+function getJson() {
+  return new Promise((resolve, reject) => {
+      setTimeout(function () {
+          console.log(2)
+          resolve(2)
+      }, 2000)
+  })
+}
+
+testAsync() 
