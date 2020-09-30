@@ -1,0 +1,67 @@
+<!-- 协程 纤程
+  进程  线程  纤程
+ -->
+ <script>
+  // async + await => (babel)  => generate
+  // TJ (Co)   =>  generate
+  // async
+  function foo() {
+    return new Promise((resolve, reject) => {
+      console.log('f00 call');
+      resolve();
+    })
+  }
+  function * gen() {
+    // await  
+    let a = yield foo();
+    console.log(1, a);
+    let b = yield 2;
+    console.log(2, b);
+  }
+  function aa() {
+    console.log(1);
+    // 
+    console.log(2);
+  }
+  // aa()  // 一条路走到黑
+  let it = gen();  //
+  // let a = 123;
+  console.log(it.next('AAAA')); // 告诉上一个 yield 返回什么东西
+  console.log(it.next('BBBB'));
+  console.log(it.next('CCCC'));
+
+  // async + await 
+  // await 1
+  // await '123'
+  // await Promise
+
+  function sleep(t) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(t)
+      }, t);
+    })
+  }
+  // let a = await sleep(1000)
+  // let b = await sleep(2000)
+  function * run() {
+    let a = yield sleep(1000);
+    console.log(1);
+    let b = yield sleep(2000);
+    console.log(2);
+  }
+  // Tj CO
+  function runGenerate(it) {
+    let { value, done } = it.next();
+    if (done) return
+    else {
+      value.then(() => {
+        runGenerate(it);
+      })
+    }
+    // else runGenerate(it)
+  }
+  let it1 = run();
+  // it.next() it.next() it.next()
+  runGenerate(it1)
+</script>

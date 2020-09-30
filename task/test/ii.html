@@ -1,46 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<style>
-    html {
-        /* font-size: 19.2px;  */
-    }
-    .box {
-        width: 100%; 
-        background-color: red;
-        margin: 0 auto;
-        min-width: 200px;
-    }
-
-    .box2 {
-        width: 200px;
-        height: 200px;
-        background-color: blue;
-    }
-
-    /* @media only screen and (max-width: 1366px) {
-        html {
-            font-size: 13.66px;
-        }
-    } */
-</style>
-
-<body>
-    <div class="box">
-        <div class="box2"></div>
-    </div>
-
-    <script>
-        (function hhh() {
-            console.log(1);
-        })()
-    </script>
-</body>
-
-</html>
+<script>
+	var majorityElement = function (nums) {
+		let count = 1
+		let n = nums.length
+		for (let i of nums) {
+			for (let j = 0; j < n; j++) {
+				if(i == nums[j]) {
+					count++
+				}
+				if(count > (n/2)) {
+					return i
+				}
+			}
+		}
+	};
+	majorityElement([1,2,3,2,2])
+</script>
