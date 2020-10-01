@@ -1,5 +1,6 @@
 import axios  from 'axios'
 import config from './config.js'
+import router from '../src/router'
 
 import qs from 'qs' // 序列化请求数据，服务端要求
 import { Toast } from 'vant'
@@ -9,7 +10,7 @@ export default function $axios(options) {
     const instance = axios.create({
       baseURL: config.baseURL,
       headers: {},
-      transformResponse: [function(data) {}]
+      transformResponse: [function() {}]
     })
 
     instance.interceptors.request.use(
@@ -48,9 +49,9 @@ export default function $axios(options) {
         }
 
         data = JSON.parse(data)
+        const message = data.msg || 'Error'
         switch (data.code) {
           case 0:
-            const message = data.msg || 'Error'
             Toast.fail({
               message,
               duration: 1000
@@ -61,8 +62,8 @@ export default function $axios(options) {
         return data
 
       },
-      error => {
-        if (error && error.response) {
+      err => {
+        if (err && err.response) {
           switch (err.response.status) {
             case 400:
               err.message = '请求错误'

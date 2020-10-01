@@ -9,7 +9,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 
 Vue.use(Vant)
-Vue.Vue(api)
+Vue.use(api)
 
 Vue.config.productionTip = false
 
