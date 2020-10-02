@@ -1,4 +1,5 @@
 import apiLogin from './interface/login'
+import apiRegister from './interface/register'
 
 const install = Vue => {
   if (install.installed) {
@@ -11,7 +12,8 @@ const install = Vue => {
       get() {
         return Object.assign(
           {},
-          apiLogin
+          apiLogin,
+          apiRegister
         )
       }
     }

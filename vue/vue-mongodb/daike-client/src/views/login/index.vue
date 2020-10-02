@@ -73,7 +73,7 @@ export default {
         duration: 0
       })
     },
-    ...mapActions['setUserInfo'],
+    ...mapActions(['setUserInfo']),
     login() {
       this.$http
         .login({
