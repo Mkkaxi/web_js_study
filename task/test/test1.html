@@ -1,0 +1,14 @@
+<ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+
+<script>
+  let li = document.querySelectorAll('li')
+  for (var i = 0; i < li.length; i++) {
+    li[i].addEventListener('click', () => {
+      console.log(i);
+    })
+  }
+</script>
