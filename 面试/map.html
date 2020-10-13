@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    Array.prototype.map = function(func) {
+      let array = []
+      let arr = this
+      for(let i = 0; i < arr.length; i++) {
+        array.push(func(arr[i]))
+      }
+      return array
+    }
+    let a = [1, 2, 3]
+    let s = a.map(x => x + 1)
+    console.log(s);
+
+
+    // function readFile(func) {
+    //   setTimeout(() => {
+    //     func('ok')
+    //   }, 3000)
+    // }
+    // readFile((c) => {
+    //   console.log(c);
+    // })
+
+  </script>
+</body>
+</html>

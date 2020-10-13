@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 函数是一等公民
+    // 函数和其他类型（bool, string, number)一样，都可以作为参数传递，也可以作为函数的返回状返回
+    function repeat(func, times, wait) {
+      return () => {
+        for (let i = 0; i < times; i++) {
+          setTimeout(() => {
+            func(arguments)
+          }, i * wait)
+        }
+      }
+    }
+
+    const repeatFunc = repeat(console.log, 4, 3000)
+    repeatFunc("hellworld")
+  </script>
+</body>
+</html>
