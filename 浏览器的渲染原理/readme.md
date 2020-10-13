@@ -54,7 +54,7 @@ getComputedStyle()
 getBoundingClientRect
 
 
-# 减少回流和重绘
+# 减少回流(重排)和重绘
 修改单一DOM：
   1. cssText
   2. 使用类名

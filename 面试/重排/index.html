@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="domA"></div>
+  <div id="domB"></div>
+  <div id="domC"></div>
+  <script>
+    const DomA = document.getElementById('domA')
+    const DomB = document.getElementById('domB')
+    const DomC = document.getElementById('domC')
+    function timer() {
+      DomA.style.width = DomA.offsetWidth + 1 + 'px'
+      DomB.style.width = DomA.offsetWidth + 1 + 'px'
+      DomC.style.width = DomA.offsetWidth + 1 + 'px'
+    }
+    setTimeout(() => {
+      timer()
+    }, 1000)
+  </script>
+</body>
+</html>
