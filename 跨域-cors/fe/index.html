@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- XMLHttpRequest -->
+  <!-- fetch -->
+  <script>
+    // 简单请求
+    // 非简单请求: 以 OPTIONS 请求方法发出一个预检请求（preflight），请求看允许
+    // 简单请求可以已原生form的形式  非简单请求fetch xml
+    let header = new Headers()
+    header.set('Content-Type', 'application/json')
+    header.set('X-custom', 'xxxxxx')
+    fetch('http://localhost:9090/api', {
+      headers:header,
+      data: JSON.stringify({a: 1}),
+      method: 'POST'
+    })
+    .then(res => res.json())
+    .then(r => {
+      console.log(r);
+    })
+  </script>
+</body>
+</html>
