@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h2>
+      <h1></h1>
+    </h2>
+  </div>
+  <hr>
+
+  <script>
+    // let a = document.documentElement
+    // console.log(a);
+    let res = {}
+    function walk(root) {
+      if (root.tagName.startsWith('H')) {
+        console.log(root.tagName);
+        if (res[root.tagName] !== undefined) {
+          res[root.tagName] ++
+        } else {
+          res[root.tagName] = 1
+        }
+      }
+      if (root.children) {
+        // console.log(root);
+        for (let child of root.children) {
+          // 拿到所有的子节点  还要子节点的 children
+          walk(child)
+        }
+      }
+    }
+    walk(document.documentElement)
+    console.log(res);
+  </script>
+</body>
+</html>
