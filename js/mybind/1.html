@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 实现ES5中Function原型的bind方法， 使得以下程序最后能输出'success'
+    Function.prototype.mybind = function() {}
+    function Animal(name, color) {
+      this.name = name;
+      this.color = color;
+    }
+    Animal.prototype.say = function () {
+      return `I'm a ${this.color} ${this.name}`;
+    };
+    const Cat = Animal.mybind(null, 'cat');
+    const cat = new Cat('white');
+    if (cat.say() === 'I\'m a white cat' && cat instanceof Cat && cat instanceof Animal) {
+      console.log('success');
+    }
+  </script>
+</body>
+</html>
