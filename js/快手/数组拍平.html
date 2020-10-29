@@ -1,0 +1,17 @@
+<script>
+  function flat(arr) {
+    let res = []
+    function walk(myarr) {
+      for (let i = 0; i < myarr.length; i++) {
+        if(Array.isArray(myarr[i])) {
+          walk(myarr[i])
+        } else {
+          res.push(myarr[i])
+        }
+      }
+    }
+    walk(arr)
+    return res
+  }
+  console.log(flat([1, 2, 3, [4, [5]]]));
+</script>

@@ -1,0 +1,13 @@
+<script>
+  function instanceOf(obj, Constructor) {
+    let proto = obj.__proto__
+    while (proto !== Constructor.prototype) {
+      if (proto === null) {
+        return false
+      }
+      proto = proto.__proto__
+    }
+    return true
+  }
+  console.log(instanceOf('5', Array));
+</script>
