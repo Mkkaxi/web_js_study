@@ -1,0 +1,13 @@
+<script>
+  
+  Array.prototype.myMap = function(fn) {
+    return this.reduce((pre, next) => {
+      pre.push(fn(next))
+      return pre
+    }, [])
+  }
+
+  
+
+
+</script> 
