@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    let obj1 = { a: 1 }
+    let queue = new Set()
+    let obj = new Proxy(obj1, {
+      set(...args) {
+        queue.add(watch)
+        return Reflect.set(...args)
+      }
+    })
+    function watch() {
+      console.log('xxl');
+      document.getElementById('app').innerHTML = obj.a
+    }
+    Promise.resolve().then(() => {
+      for (let q of queue.values()) {
+        q()
+      }
+    })
+    for (let i = 0; i < 1000; i++) {
+      obj.a = i
+    }
+
+    let obj2 = { a: 1 }
+    let obj3 = new Proxy(obj2, {
+      deleteProperty(...args) {
+        console.log('delete');
+        return Reflect.deleteProperty(...args)
+      },
+      setPrototypeOf() {},
+      getPrototypeOf() {}
+    })
+    delete obj3.a
+
+    Object.defineProperty(obj2, 'k', {
+      value: 'kkkkk'
+    })
+  </script>
+</body>
+</html>
