@@ -1,0 +1,29 @@
+<script>
+  class Event {
+    constructor() {
+      this.listener = {
+        // 'price': [],
+        // 'click': []
+      }
+    }
+    on(name, cb) {
+      if (this.listener[name] === undefined) {
+        this.listener[name] = []
+      }
+      this.listener[name].push(cb)
+    }
+    emit(name) {
+      for (let cb of this.listener[name]) {
+        cb()
+      }
+    }
+  }
+  const ev = new Event()
+  ev.on('price', () => {
+    console.log('price change');
+  })
+  ev.on('click', () => {
+    console.log('price click');
+  })
+  ev.emit('price')
+</script>
