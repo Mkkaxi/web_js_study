@@ -10,12 +10,31 @@
       if (this.listener[name] === undefined) {
         this.listener[name] = []
       }
-      this.listener[name].push(cb)
+      this.listener[name].push({
+        cb: cb,
+        once: false
+      })
     }
     emit(name) {
-      for (let cb of this.listener[name]) {
-        cb()
+      // for (let cb of this.listener[name]) {
+      //   cb()
+      // }
+      for (let task of this.listener[name]) {
+        task.cb()
       }
+      this.listener[name] = this.listener.name.filter(t => !t.once)
+    }
+    once(name, cb) {
+      if (this.listener[name] === undefined) {
+        this.listener[name] = []
+      }
+      this.listener[name].push({
+        cb: cb,
+        once: true
+      })
+    }
+    off(name, cb) {
+
     }
   }
   const ev = new Event()
