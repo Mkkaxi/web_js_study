@@ -4,11 +4,11 @@ const service = axios.create({
   baseURL: '/api'
 })
 
-service.interceptors.request.use( config => {
+service.interceptors.request.use(config => {
   return config
 })
 
-service.interceptors.response( response => {
+service.interceptors.response.use(response => {
   return response.data
 })
 

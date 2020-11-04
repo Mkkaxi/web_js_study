@@ -3,7 +3,7 @@
     <van-nav-bar
       :title="title"
       :left-text="leftText"
-      :left-arrow = "leftArrow"
+      :left-arrow="leftArrow"
       @click-left="goBack"
     />
 
@@ -18,9 +18,9 @@
 </template>
 
 <script>
+import { NavBar, Search } from 'vant'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Search, NavBar } from 'vant'
 export default {
   props: {
     title: {
@@ -59,10 +59,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .van-nav-bar{
-    &::after{
-      border-bottom: none;
-    }
+.van-nav-bar{
+  &::after{
+    border-bottom-width: 0px;
   }
-
+}
 </style>
