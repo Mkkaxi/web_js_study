@@ -1,0 +1,2 @@
+# virtual dom 虚拟dom解构
+通过Object对象模拟DOM中的节点，然后再通过render函数将其渲染成真实的DOM节点
