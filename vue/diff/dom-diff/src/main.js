@@ -8,7 +8,9 @@ let virtualDom1 = createElement('ul', {class: 'list'}, [
 ])
 
 let virtualDom2 = createElement('ul', {class: 'list-group', id: 'group'}, [
-  createElement('li', {class: 'item'}, ['a'])
+  createElement('li', {class: 'item'}, ['a']),
+  createElement('li', {class: 'item'}, ['b']),
+  createElement('li', {class: 'item'}, ['c'])
 ])
 
 
