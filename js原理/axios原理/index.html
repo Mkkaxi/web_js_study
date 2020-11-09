@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">点我发送请求</button>
+
+  <script src="./myaxios.js"></script>
+  <script>
+    axios.interceptors.request.use(
+      (config) => {
+        // 在发送请求之前做些什么
+        config.method = 'get'
+        console.log('被我请求拦截器拦截了', config)
+        return config
+      },
+      (error) => {
+        // 对请求错误做些什么
+        return Promise.reject(error)
+      }
+    )
+
+    axios.interceptors.response.use(
+      (res) => {
+        // 对响应数据做些什么
+        console.log('被我响应拦截到了')
+        res = {message: '响应拦截替换的数据'}
+        return res
+      },
+      (error) => {
+        // 对响应错误做些什么
+        return Promise.reject(error)
+      }
+    )
+    document.querySelector('.btn').onclick = function() {
+      axios.get('http://localhost:3000/getTest')
+        .then(res => {
+          console.log('postAxios 响应成功', res);
+        })
+
+      // axios({
+      //   method: 'get',
+      //   url: 'http://localhost:3000/getTest'
+      // }).then(res => {
+      //   console.log('postAxios 响应成功', res);
+      // })
+    }
+  </script>
+</body>
+</html>
