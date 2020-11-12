@@ -1,0 +1,19 @@
+{
+  "name": "tree-shaking",
+  "version": "1.0.0",
+  "description": "entry.js 入口  引入的 js 打包成一个文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "sideEffects": false,
+  "dependencies": {
+    "loadsh": "0.0.4",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
