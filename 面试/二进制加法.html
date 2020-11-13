@@ -1,0 +1,18 @@
+<script>
+  // 实现一个二进制加法，输入输出均为二进制字符串
+  function binaryAdd(num1, num2) {
+    let arr = []
+    let carry = 0
+    for (let i = num1.length - 1, j = num2.length - 1; i >= 0 || j >= 0; i++, j--) {
+      let a = num1.chatAt(i) ? Number(num1.chatAt(i)) : 0;
+      let b = num2.chatAt(j) ? Number(num2.chatAt(j)) : 0;
+      let sum = a + b + carry
+      arr.unshift(sum % 2)
+      sum >= 2 ? carry = 1 : carry = 0
+    }
+    if (carry) {
+      arr.unshift(carry)
+    }
+    return arr.join('')
+  }
+</script>
