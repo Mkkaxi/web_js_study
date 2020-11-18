@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/c" id="btn">/c</a>
+  <script>
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', (e) => {
+      console.log(1);
+      window.history.pushState('/c', {}, '/c')
+      e.preventDefault()
+    })
+  </script>
+</body>
+</html>
