@@ -4,7 +4,7 @@ function debounce(func, delay) {
   return function() {
     // 在规定的时间内再次触发会清除定时器后再重设定时器
     if(timer) {
-      clearInterval(timer)
+      clearTimeout(timer)
     }
 
     timer = setTimeout(() => {
